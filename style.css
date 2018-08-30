@@ -1,7 +1,50 @@
-body {
+body, html {
   height: 100%;
   font-family: 'Roboto', sans-serif;
-  background: red;
+  font-size: 1.25em;
+  color: white;
+}
+
+#bg {
+  position: fixed;
+  background-image: url("images/bg.png");
+  opacity: .1 black;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-shadow:
+  -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+}
+
+#content {
+  position: absolute;
+}
+
+#intro {
+  font-size: 1.25em;
+  margin: 20vh 0 40vh 4vw;
+}
+
+#intro h4{
+  margin: 0 0 0 2vw;
+}
+
+#skills {
+  margin: 0 0 20vh 0;
+}
+
+#contact {
+  margin: 0 0 20vh 0;
 }
 
 .center-text {
@@ -14,17 +57,18 @@ body {
 }
 
 .project {
-  background: rgba(255,255,255,.25);
-  padding: 10px 20px 10px;
-  margin: 100px;
+  background: rgba(0,0,0,.25);
+  padding: 1vh 2vw 1vh 2vw;
+  margin: 10vh 4vh;
+  border-radius: 20px;
+  border: 1px solid white;
 }
 
 .flex-wrapper {
   display: flex;
-}
-
-.contact {
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 2vh 0 0 0;
 }
 
 .basic-info {
@@ -32,6 +76,7 @@ body {
 }
 
 .description-text {
+  align-self: center;
   padding: 0% 0% 0% 5%;
   width: 55%;
 }
