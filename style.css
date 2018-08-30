@@ -8,6 +8,11 @@ body {
   text-align: center;
 }
 
+.floater:hover {
+  margin-top: -10px;
+  transition: all 200ms ease;
+}
+
 .project {
   background: rgba(255,255,255,.25);
   padding: 10px 20px 10px;
@@ -16,6 +21,10 @@ body {
 
 .flex-wrapper {
   display: flex;
+}
+
+.contact {
+  justify-content: space-evenly;
 }
 
 .basic-info {
