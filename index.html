@@ -2,71 +2,82 @@
 <html lang="en">
   <head>
     <title>Portfolio</title>
-    <link rel="icon" href="favicon.png" />
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <script type='text/javascript' src='app.js' defer></script>
+    <link rel="icon" href="favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+    <script type="text/javascript" src="app.js" defer></script>
   </head>
 
   <body>
     
-    <h1>Welcome to my portfolio!</h1>
+    <h1 class="center-text">Welcome to my portfolio!</h1>
     
-    <h2>Projects, or, this site's actual content</h2>
+    <h2 class="center-text">Projects, or, this site's actual content</h2>
     
     <div class="project">
-      <h3>WhatsStackIOS</h3>
-      <p>
-        The iPhone store made deployment impractical, unfortunately
-        <br/>
-        <a href="https://github.com/the-four-o-fours/WhatsStackIOS">Github</a>
-        <br/>
-        Tech stack: React Native, Redux, Firebase, Xcode, git
-        <br/>
-        Features:
-        <br/>&nbsp;&nbsp;End to end encrypted IOS messaging app
-        <br/>&nbsp;&nbsp;Two factor authentication
-        <br/>&nbsp;&nbsp;One to one, group, and image messaging
-        <br/>&nbsp;&nbsp;Working on other forms of media
-        <br/>
-        Development Environment: Agile, with three other developers
-        <br/>
-        <br/>
-        This was my group's final project at Fullstack Academy. After months of working primarily on websites and webapps, we decided to go way out of our comfort zones by making a security oriented app on a different platform with a totally new tech stack. The amount of new technical material, tight deadline, and unfamiliar development tools made the project extremely challenging, but I'm very proud of the final project, our team's work, and the amount we learned.
-      </p>
+      <h3 class="center-text">WhatsStackIOS</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li>The iPhone app store made deployment impractical, unfortunately</li>
+            <li><a href="https://github.com/the-four-o-fours/WhatsStackIOS">Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>React Native, Redux, Firebase, Xcode, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>One to one, group, and image messaging</li>
+            <li>End to end encryption</li>
+            <li>Two factor authentication</li>
+            <li>Slick, modern interface aesthetic</li>
+          </ul>
+          <b>Development Environment:</b> Agile, with three other developers
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This was my group's final project at Fullstack Academy. After months of working primarily on websites and webapps, we decided to go way out of our comfort zones by making a security oriented app on a different platform with a totally new tech stack. The amount of new technical material, tight deadline, and unfamiliar development tools made the project extremely challenging, but I'm very proud of the final project, our team's work, and the amount we learned.
+        </p>
+      </div>
       <!-- <img screenshot?/> -->
     </div>
     
     <div class="project">
-      <h3>Plate Scraper</h3>
-      <p>
-        <a href="https://chrome.google.com/webstore/detail/plate-scraper/pohdgoipnoaopknopkpdeooophfnkmel">Chrome Extension Deployment</a>
-        <br/>
-        <a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Chrome_Extension">Chrome Extension Github</a>
-        <br/>
-        <a href="https://plate-scraper.herokuapp.com/">Website Deployment</a>
-        <br/>
-        <a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Minimal">Website Github</a>
-        <br/>
-        Tech stack: Express, React, Cheerio, Request-Promise-Native, Chrome API, Mocha, Chai, CSS, git
-        <br/>
-        Features:
-        <br/>&nbsp;&nbsp;Get recipe titles, ingredients, and instructions as minimally formatted, easily-editable and downloadable plaintext in one click
-        <br/>&nbsp;&nbsp;Supports the top 15 (by traffic) recipe aggregation sites
-        <br/>&nbsp;&nbsp;Available as a Chrome extension, or regular no-installation required webapp
-        <br/>&nbsp;&nbsp;Intuitive, easy to use interface
-        <br/>&nbsp;&nbsp;Won in-house award for technical complexity
-        <br/>
-        Development Environment: Solo
-        <br/>
-        <br/>
-        This was a solo web-scraping project I began early in 2018 and finished at Fullstack Academy. I actually started it before Fullstack began, but even though I managed scrape and parse sites with a node.js script, I had no idea how to integrate that with the website's frontend. I finished the project during Fullstack once I had learned more, and adapted it into a Chrome extension for a class project. It was my very first original project idea, so this site will always be my child.
-      </p>
+      <h3 class="center-text">Plate Scraper</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a href="https://chrome.google.com/webstore/detail/plate-scraper/pohdgoipnoaopknopkpdeooophfnkmel">Chrome Extension Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Chrome_Extension">Chrome Extension Source Code</a></li>
+            <li><a href="https://plate-scraper.herokuapp.com/">Website Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Minimal">Website Source Code</a></li>
+          </ul>  
+          <b>Tech stack:</b>
+          <ul>
+            <li>Express, React, Cheerio, Request-Promise-Native, Chrome API, Mocha, Chai, CSS, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>Get recipe titles, ingredients, and instructions as plaintext in one click</li>
+            <li>Text is minimally formatted, easily-editable and downloadable</li>
+            <li>Supports the top 15 (by traffic) recipe aggregation sites</li>
+            <li>Available as a Chrome extension, or regular no-installation required webapp</li>
+            <li>Intuitive, easy to use interface</li>
+            <li>Won in-house award for technical complexity</li>
+          </ul>
+          <b>Development Environment:</b> Solo
+        </div>
+        <p class="description-text">
+          This was a solo web-scraping project I began early in 2018 and finished at Fullstack Academy. I actually started it before Fullstack began, but even though I managed scrape and parse sites with a node.js script, I had no idea how to integrate that with the website's frontend. I finished the project during Fullstack once I had learned more, and adapted it into a Chrome extension for a class project. It was my very first original project idea, so this site will always be my child.
+        </p>
+      </div>
       <!-- <img screenshot?/> -->
     </div>
 
     <div class="project">
-      <h3>E-commerce Site</h3>
+      <h3 class="center-text">E-commerce Site</h3>
       <p>
         <a href="https://fellowship-1804-graceshopper.herokuapp.com/">Deployment</a>
         <br/>
@@ -91,7 +102,30 @@
     </div>
 
     <div class="project">
-      <h3>Redux Action Creator Factory NPM Module</h3>
+      <h3 class="center-text">Markov Chain Based Quote Generator</h3>
+      <p>
+        <a href="https://markov-danaher-quotes.herokuapp.com/">Deployment</a>
+        <br/>
+        <a href="https://github.com/SpencerWhitehead7/markov-danaher-quotes-site">Website Github</a>
+        <br/>
+        <a href="https://github.com/SpencerWhitehead7/markov-danaher-quotes">Markov Chain Github</a>
+        <br/>
+        Tech stack: Javascript, Express, HTML, CSS, git
+        <br/>
+        Features:
+        <br/>&nbsp;&nbsp;Generates quotes of varying lengths using a Markov Chain
+        <br/>&nbsp;&nbsp;Node.js files which allow you to generate your own chains and quotes using the input of your choice
+        <br/>
+        Development Environment: Solo
+        <br/>
+        <br/>
+        This site procedurally generates quotes in the style of <a href="https://www.newyorker.com/culture/persons-of-interest/the-jujitsu-master-turning-an-ancient-art-into-a-modern-science">John Danaher</a>, based on a Markov chain generated from his social media posts. The Markov chain script is generalizable and could be used to generate chains and quotes from any input text. The website uses a precomputed Markov chain derived from Danaher's posts to generate the quotes.
+      </p>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project">
+      <h3 class="center-text">Redux Action Creator Factory NPM Module</h3>
       <p>
         <a href="https://www.npmjs.com/package/redux-action-creator-factory">Deployment</a>
         <br/>
@@ -112,7 +146,7 @@
     </div>
 
     <div class="project">
-      <h3>Portfolio Site</h3>
+      <h3 class="center-text">Portfolio Site</h3>
       <p>
         <a href="https://spencerwhitehead7.github.io/personal-site/">Deployment</a>
         <br/>
@@ -130,8 +164,9 @@
       <!-- <img screenshot?/> -->
     </div>
     
-    <h2>Bio, or, why are you a programmer?</h2>
+    <h2 class="center-text">Bio, or, why are you a programmer?</h2>
 
+    <div class="project">
     <p>
       In 2015, I graduated from University of Chicago with a degree in Political Science, then promptly spent two years not using it. I did do a pretty wide range of other things, including but not limited to interning at The Innocence Project, being a TA at a Stanford academic summer program, and working as a ski instructor. I learned a lot from these jobs, including that I really loved the jobs where I could learn and grow and always be developing my skills. In the beginning of 2018, I started looking for a long term career with those kinds of opportunities, and several of my friends suggested programming.
       <br/>
@@ -143,6 +178,7 @@
       <br/>
       (Unrelatedly, if you happen to like the look of my projects and need a web developer, please feel free to email me at SpencerWhitehead7 (at) gmail (dot) com)
     </p>
+  </div>
   
   </body>
   </html>
