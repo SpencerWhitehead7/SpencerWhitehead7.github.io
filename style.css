@@ -8,7 +8,6 @@ body, html {
 #bg {
   position: fixed;
   background-image: url("images/bg.png");
-  opacity: .1 black;
   top: 0;
   left: 0;
   right: 0;
@@ -18,12 +17,20 @@ body, html {
   background-size: cover;
 }
 
-a {
-  text-shadow:
-  -1px -1px 0 white,
-  1px -1px 0 white,
-  -1px 1px 0 white,
-  1px 1px 0 white;
+.project a {
+  background: rgba(255,255,255,.5);
+}
+
+.project a:hover {
+  background: white;
+}
+
+#gh-link {
+  background: rgba(255,255,255,.5);
+}
+
+#gh-link:hover {
+  background: white;
 }
 
 #content {
@@ -57,7 +64,7 @@ a {
 }
 
 .project {
-  background: rgba(0,0,0,.25);
+  background: rgba(0,0,0,.5);
   padding: 1vh 2vw 1vh 2vw;
   margin: 10vh 4vh;
   border-radius: 20px;
