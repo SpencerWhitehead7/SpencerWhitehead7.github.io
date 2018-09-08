@@ -1,4 +1,4 @@
-# My Personal Site
+# Portfolio
 
 A real simple HTML site that collects all my programming work/projects in one place so it's easy to look at/explore.
 
