@@ -17,24 +17,28 @@ body, html {
   background-size: cover;
 }
 
-.project a {
-  background: rgba(255,255,255,.5);
+#content {
+  position: absolute;
 }
 
-.project a:hover {
-  background: white;
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2vh 0 0 0;
+}
+
+.center-text {
+  text-align: center;
 }
 
 #gh-link {
-  background: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.9);
+  border-radius: 3px;
 }
 
 #gh-link:hover {
   background: white;
-}
-
-#content {
-  position: absolute;
 }
 
 #intro {
@@ -54,28 +58,30 @@ body, html {
   margin: 0 0 20vh 0;
 }
 
-.center-text {
-  text-align: center;
-}
-
 .floater:hover {
   margin-top: -10px;
   transition: all 200ms ease;
 }
 
 .project {
-  background: rgba(0,0,0,.5);
+  background: rgba(51,51,51,.9);
   padding: 1vh 2vw 1vh 2vw;
   margin: 5vh 4vh;
   border-radius: 20px;
   border: 1px solid white;
 }
 
-.flex-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 2vh 0 0 0;
+.project a {
+  background: rgba(255,255,255,.9);
+  border-radius: 3px;
+}
+
+.project a:hover {
+  background: white;
+}
+
+.project ul li {
+  margin: 5px;
 }
 
 .basic-info {
