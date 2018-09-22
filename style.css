@@ -66,7 +66,7 @@ body, html {
 .project {
   background: rgba(0,0,0,.5);
   padding: 1vh 2vw 1vh 2vw;
-  margin: 10vh 4vh;
+  margin: 5vh 4vh;
   border-radius: 20px;
   border: 1px solid white;
 }
@@ -87,3 +87,23 @@ body, html {
   padding: 0% 0% 0% 5%;
   width: 55%;
 }
+
+/* FADE IN / FADE OUT FOR PROJECTS START */
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .5s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .5s, opacity .5s linear;
+}
+
+.gone {
+  display: none;
+}
+
+/* FADE IN / FADE OUT FOR PROJECTS END */
