@@ -7,7 +7,7 @@
     evt.stopPropagation()
     projectsHeader.scrollIntoView(true)
     projectButtons.classList.add(`gone`)
-    const ele = document.getElementById(evt.target.value)
+    const ele = document.getElementById(evt.target.parentElement.value)
     ele.classList.remove(`gone`)
     ele.classList.add(`visible`)
     setTimeout(() => ele.classList.remove(`hidden`), 1)
