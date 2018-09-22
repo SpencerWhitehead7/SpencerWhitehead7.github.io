@@ -7,7 +7,7 @@
     const ele = document.getElementById(evt.target.value)
     ele.classList.remove(`gone`)
     ele.classList.add(`visible`)
-    ele.classList.remove(`hidden`)
+    setTimeout(() => ele.classList.remove(`hidden`), 1)
   })
 
   document.getElementsByTagName(`body`)[0].addEventListener(`click`, () => {
@@ -16,8 +16,8 @@
       visibles.forEach(ele => {
         ele.classList.remove(`visible`)
         ele.classList.add(`hidden`)
-        setTimeout(() => ele.classList.add(`gone`), 500)
-        setTimeout(() => projectButtons.classList.remove(`gone`), 500)
+        setTimeout(() => ele.classList.add(`gone`), 300)
+        setTimeout(() => projectButtons.classList.remove(`gone`), 300)
       })
     }
   })

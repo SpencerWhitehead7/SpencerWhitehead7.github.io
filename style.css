@@ -69,6 +69,8 @@ body, html {
   margin: 5vh 4vh;
   border-radius: 20px;
   border: 1px solid white;
+  transition: all .3s linear;
+  display: block;
 }
 
 .project a {
@@ -94,22 +96,10 @@ body, html {
   width: 55%;
 }
 
-/* FADE IN / FADE OUT FOR PROJECTS START */
-
-.visible {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity .5s linear;
-}
-
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s .5s, opacity .5s linear;
-}
-
 .gone {
   display: none;
 }
 
-/* FADE IN / FADE OUT FOR PROJECTS END */
+.hidden {
+  opacity: 0;
+}
