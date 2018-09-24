@@ -22,8 +22,8 @@
       visibles.forEach(ele => {
         ele.classList.remove(`visible`)
         ele.classList.add(`hidden`)
-        setTimeout(() => ele.classList.add(`gone`), 300)
-        setTimeout(() => projectButtons.classList.remove(`gone`), 300)
+        setTimeout(() => ele.classList.add(`gone`), 250)
+        setTimeout(() => projectButtons.classList.remove(`gone`), 250)
       })
     }
   })

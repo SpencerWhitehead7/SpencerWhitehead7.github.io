@@ -67,6 +67,7 @@ body, html {
 button {
   background-color: transparent;
   border: none;
+  outline: none;
 }
 
 .project {
@@ -75,7 +76,7 @@ button {
   margin: 5vh 4vh;
   border-radius: 20px;
   border: 1px solid white;
-  transition: all .3s linear;
+  transition: all 250ms ease;
   display: block;
 }
 
