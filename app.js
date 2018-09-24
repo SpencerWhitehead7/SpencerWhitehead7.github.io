@@ -5,12 +5,14 @@
 
   projectButtons.addEventListener(`click`, evt => {
     evt.stopPropagation()
-    projectsHeader.scrollIntoView(true)
-    projectButtons.classList.add(`gone`)
     const ele = document.getElementById(evt.target.parentElement.value)
-    ele.classList.remove(`gone`)
-    ele.classList.add(`visible`)
-    setTimeout(() => ele.classList.remove(`hidden`), 1)
+    if(ele){ // deals with the weird edge case where the button floats up and the clicked ele registers as null and everything else errors out
+      projectsHeader.scrollIntoView(true)
+      projectButtons.classList.add(`gone`)
+      ele.classList.remove(`gone`)
+      ele.classList.add(`visible`)
+      setTimeout(() => ele.classList.remove(`hidden`), 1)
+    }
   })
 
   document.getElementsByTagName(`body`)[0].addEventListener(`click`, () => {
