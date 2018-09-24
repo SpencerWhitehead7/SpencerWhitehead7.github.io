@@ -60,7 +60,6 @@ body, html {
 
 .floater:hover {
   margin-top: -10px;
-  margin-bottom: 10px;
   transition: all 200ms ease;
   background-image: radial-gradient(circle, rgba(255,255,255,.9) 25%, rgba(255,255,255,0) 75%);
 }
