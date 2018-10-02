@@ -36,17 +36,16 @@
 
   const banner = document.getElementById(`banner`)
 
-  const ensp = String.fromCharCode(8194)
-
   const fillOrRemoveChars = (counter, loopLength, baseStr, blanks, domEle, speed, endStr) => {
     if(counter < loopLength){
       const oldBlanks = blanks.join(``)
       while(oldBlanks === blanks.join(``)){
         const index = Math.floor(Math.random() * blanks.length)
-        blanks[index] = endStr === undefined ? ensp : endStr[index]
+        blanks[index] = endStr === undefined ? ` ` : endStr[index]
       }
       const newText = `${baseStr}${blanks.join(``).trimEnd()}`
-      domEle.innerText = newText
+      const newHTML = `<h1>${newText.split(` `).join(`<span>${String.fromCharCode(8194)}</span>`)}</h1>`
+      domEle.innerHTML = newHTML
       console.log(newText)
       counter++
       setTimeout(() => fillOrRemoveChars(counter, loopLength, baseStr, blanks, domEle, speed, endStr), speed)
@@ -54,7 +53,7 @@
   }
 
   const generateStr = (endStr, domEle, speed, dispTime, loopLength, baseStr = ``) => {
-    const blanks = new Array(endStr.length).fill(ensp)
+    const blanks = new Array(endStr.length).fill(` `)
     fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed, endStr)
     setTimeout(() => fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed), (speed * loopLength) + dispTime)
   }
@@ -64,17 +63,17 @@
     let timer = 0
     for(let i = 0; i < rest.length; i++){
       const endStr = rest[i]
-      const loopLength = endStr.split(``).filter(char => char !== ensp).length
+      const loopLength = endStr.split(``).filter(char => char !== ` `).length
       setTimeout(() => generateStr(endStr, domEle, speed, dispTime, loopLength, baseStr), timer)
       timer += (speed * loopLength * 2) + dispTime + blankTime
     }
   }
 
   bannerGimmick(banner, 50, 2000, 500,
-    `'m${ensp}Spencer${ensp}Whitehead`,
-    `'m${ensp}a${ensp}Full${ensp}Stack${ensp}Software${ensp}Engineer`,
-    `${ensp}love${ensp}programming${ensp}and${ensp}learning${ensp}new${ensp}things`)
-
+    `Spencer Whitehead`,
+    `a Full Stack Software Engineer`,
+    `someone who loves programming`,
+    `always learning and growing my skills`)
 
   // GIMMICKY HEADEAR END
 }
