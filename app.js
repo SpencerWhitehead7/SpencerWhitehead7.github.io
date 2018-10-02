@@ -36,45 +36,46 @@
 
   const banner = document.getElementById(`banner`)
 
-  const typeWriterAdd  = () => {
+  const ensp = String.fromCharCode(8194)
 
-  }
-
-  const generateStr = (endStr, domEle, baseStr = ``) => {
-    let newText = baseStr
-    const blanks = new Array(endStr.length).fill(` `)
-    const loopLength = endStr.split(``).filter(char => char !== ` `).length
-    for(let i = 0; i < loopLength; i++){
-      const oldBlanks = blanks.join(``)
-      while(oldBlanks === blanks.join(``)){
-        const index = Math.floor(Math.random() * endStr.length)
-        blanks[index] = endStr[index]
-      }
-      newText = `${baseStr}${blanks.join(``).trimEnd()}`
-      domEle.innerText = newText
-      console.log(newText)
-    }
-
-    for(let i = 0; i < loopLength; i++){
+  const fillOrRemoveChars = (counter, loopLength, baseStr, blanks, domEle, speed, endStr) => {
+    if(counter < loopLength){
       const oldBlanks = blanks.join(``)
       while(oldBlanks === blanks.join(``)){
         const index = Math.floor(Math.random() * blanks.length)
-        blanks[index] = ` `
+        blanks[index] = endStr === undefined ? ensp : endStr[index]
       }
-      newText = `${baseStr}${blanks.join(``).trimEnd()}`
+      const newText = `${baseStr}${blanks.join(``).trimEnd()}`
       domEle.innerText = newText
       console.log(newText)
+      counter++
+      setTimeout(() => fillOrRemoveChars(counter, loopLength, baseStr, blanks, domEle, speed, endStr), speed)
     }
   }
 
-  const bannerGimmick = (domEle, ...rest) => {
+  const generateStr = (endStr, domEle, speed, loopLength, baseStr = ``) => {
+    const blanks = new Array(endStr.length).fill(ensp)
+    fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed, endStr)
+    setTimeout(() => fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed), (speed * loopLength) + 2000)
+  }
+
+  const bannerGimmick = (domEle, speed, dispTime, ...rest) => {
     const baseStr = domEle.innerText
+    let timer = 0
     for(let i = 0; i < rest.length; i++){
-      generateStr(rest[i], domEle, baseStr)
+      const endStr = rest[i]
+      const loopLength = endStr.split(``).filter(char => char !== ensp).length
+      setTimeout(() => generateStr(endStr, domEle, speed, loopLength, baseStr), timer)
+      timer += (speed * loopLength * 2) + dispTime
     }
   }
 
-  bannerGimmick(banner, `'m Spencer Whitehead`, `'m a Full Stack Software Engineer`, ` love programming and learning new things`)
+  // bannerGimmick(banner, `'m Spencer Whitehead`, `'m a Full Stack Software Engineer`, ` love programming and learning new things`)
+  bannerGimmick(banner, 100, 1500,
+    `'m${ensp}Spencer${ensp}Whitehead`,
+    `'m${ensp}a${ensp}Full${ensp}Stack${ensp}Software${ensp}Engineer`,
+    `${ensp}love${ensp}programming${ensp}and${ensp}learning${ensp}new${ensp}things`)
+
 
   // GIMMICKY HEADEAR END
 }
