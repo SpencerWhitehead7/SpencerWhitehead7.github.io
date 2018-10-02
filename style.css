@@ -46,6 +46,10 @@ body, html {
   margin: 20vh 0 40vh 4vw;
 }
 
+#banner {
+  font-family: 'Roboto Mono', monospace;
+}
+
 #intro h4{
   margin: 0 0 0 2vw;
 }
