@@ -53,25 +53,24 @@
     }
   }
 
-  const generateStr = (endStr, domEle, speed, loopLength, baseStr = ``) => {
+  const generateStr = (endStr, domEle, speed, dispTime, loopLength, baseStr = ``) => {
     const blanks = new Array(endStr.length).fill(ensp)
     fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed, endStr)
-    setTimeout(() => fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed), (speed * loopLength) + 2000)
+    setTimeout(() => fillOrRemoveChars(0, loopLength, baseStr, blanks, domEle, speed), (speed * loopLength) + dispTime)
   }
 
-  const bannerGimmick = (domEle, speed, dispTime, ...rest) => {
+  const bannerGimmick = (domEle, speed, dispTime, blankTime, ...rest) => {
     const baseStr = domEle.innerText
     let timer = 0
     for(let i = 0; i < rest.length; i++){
       const endStr = rest[i]
       const loopLength = endStr.split(``).filter(char => char !== ensp).length
-      setTimeout(() => generateStr(endStr, domEle, speed, loopLength, baseStr), timer)
-      timer += (speed * loopLength * 2) + dispTime
+      setTimeout(() => generateStr(endStr, domEle, speed, dispTime, loopLength, baseStr), timer)
+      timer += (speed * loopLength * 2) + dispTime + blankTime
     }
   }
 
-  // bannerGimmick(banner, `'m Spencer Whitehead`, `'m a Full Stack Software Engineer`, ` love programming and learning new things`)
-  bannerGimmick(banner, 100, 1500,
+  bannerGimmick(banner, 50, 2000, 500,
     `'m${ensp}Spencer${ensp}Whitehead`,
     `'m${ensp}a${ensp}Full${ensp}Stack${ensp}Software${ensp}Engineer`,
     `${ensp}love${ensp}programming${ensp}and${ensp}learning${ensp}new${ensp}things`)
