@@ -36,6 +36,10 @@
 
   const banner = document.getElementById(`banner`)
 
+  const typeWriterAdd  = () => {
+
+  }
+
   const generateStr = (endStr, domEle, baseStr = ``) => {
     let newText = baseStr
     const blanks = new Array(endStr.length).fill(` `)
@@ -63,21 +67,14 @@
     }
   }
 
-  const bannerGimmick = domEle => {
+  const bannerGimmick = (domEle, ...rest) => {
     const baseStr = domEle.innerText
-    const nameStr = `'m Spencer Whitehead`
-    const jobStr = `'m a Full Stack Software Engineer`
-    const loveStr = ` love programming and learning new things`
-    let temp = 0
-    while(temp < 1){
-      generateStr(nameStr, domEle, baseStr)
-      generateStr(jobStr, domEle, baseStr)
-      generateStr(loveStr, domEle, baseStr)
-      temp++
+    for(let i = 0; i < rest.length; i++){
+      generateStr(rest[i], domEle, baseStr)
     }
   }
 
-  bannerGimmick(banner)
+  bannerGimmick(banner, `'m Spencer Whitehead`, `'m a Full Stack Software Engineer`, ` love programming and learning new things`)
 
   // GIMMICKY HEADEAR END
 }
