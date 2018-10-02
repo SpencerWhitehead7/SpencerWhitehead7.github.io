@@ -1,4 +1,6 @@
 {
+  // BUTTON CONTROLS START
+
   const projectButtons = document.getElementById(`project-buttons`)
 
   const projectsHeader = document.getElementById(`projects-header`)
@@ -27,4 +29,55 @@
       })
     }
   })
+
+  // BUTTON CONTROLS END
+
+  // GIMMICKY HEADER START
+
+  const banner = document.getElementById(`banner`)
+
+  const generateStr = (endStr, domEle, baseStr = ``) => {
+    let newText = baseStr
+    const blanks = new Array(endStr.length).fill(` `)
+    const loopLength = endStr.split(``).filter(char => char !== ` `).length
+    for(let i = 0; i < loopLength; i++){
+      const oldBlanks = blanks.join(``)
+      while(oldBlanks === blanks.join(``)){
+        const index = Math.floor(Math.random() * endStr.length)
+        blanks[index] = endStr[index]
+      }
+      newText = `${baseStr}${blanks.join(``).trimEnd()}`
+      domEle.innerText = newText
+      console.log(newText)
+    }
+
+    for(let i = 0; i < loopLength; i++){
+      const oldBlanks = blanks.join(``)
+      while(oldBlanks === blanks.join(``)){
+        const index = Math.floor(Math.random() * blanks.length)
+        blanks[index] = ` `
+      }
+      newText = `${baseStr}${blanks.join(``).trimEnd()}`
+      domEle.innerText = newText
+      console.log(newText)
+    }
+  }
+
+  const bannerGimmick = domEle => {
+    const baseStr = domEle.innerText
+    const nameStr = `'m Spencer Whitehead`
+    const jobStr = `'m a Full Stack Software Engineer`
+    const loveStr = ` love programming and learning new things`
+    let temp = 0
+    while(temp < 1){
+      generateStr(nameStr, domEle, baseStr)
+      generateStr(jobStr, domEle, baseStr)
+      generateStr(loveStr, domEle, baseStr)
+      temp++
+    }
+  }
+
+  bannerGimmick(banner)
+
+  // GIMMICKY HEADEAR END
 }
