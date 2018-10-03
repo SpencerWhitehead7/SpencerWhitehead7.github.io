@@ -3,9 +3,7 @@
   const projectButtons = document.getElementById(`project-buttons`)
   const projectsHeader = document.getElementById(`projects-header`)
 
-  const eventType = document.documentElement.ontouchstart ? `touchstart` : `click`
-
-  projectButtons.addEventListener(eventType, evt => {
+  projectButtons.addEventListener(`click`, evt => {
     evt.stopPropagation()
     const ele = document.getElementById(evt.target.parentElement.value)
     if(ele){ // deals with the weird edge case where the button floats up and the clicked ele registers as null and everything else errors out
@@ -17,7 +15,7 @@
     }
   })
 
-  body.addEventListener(eventType, evt => {
+  body.addEventListener(`click`, evt => {
     evt.stopPropagation()
     const visibles = [...document.getElementsByClassName(`visible`)]
     if(visibles.length > 0){
