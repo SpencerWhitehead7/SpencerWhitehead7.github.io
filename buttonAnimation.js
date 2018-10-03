@@ -1,10 +1,11 @@
 {
+  const body = document.getElementsByTagName(`body`)[0]
   const projectButtons = document.getElementById(`project-buttons`)
-
   const projectsHeader = document.getElementById(`projects-header`)
 
-  // touchstart is to handle mobile. It may cause two back to back events to be fired, which I'm testing
-  projectButtons.addEventListener(`click touchstart`, evt => {
+  const eventType = document.documentElement.ontouchstart ? `touchstart` : `click`
+
+  projectButtons.addEventListener(eventType, evt => {
     evt.stopPropagation()
     const ele = document.getElementById(evt.target.parentElement.value)
     if(ele){ // deals with the weird edge case where the button floats up and the clicked ele registers as null and everything else errors out
@@ -16,7 +17,8 @@
     }
   })
 
-  document.getElementsByTagName(`body`)[0].addEventListener(`click touchstart`, () => {
+  body.addEventListener(eventType, evt => {
+    evt.stopPropagation()
     const visibles = [...document.getElementsByClassName(`visible`)]
     if(visibles.length > 0){
       projectsHeader.scrollIntoView(true)
