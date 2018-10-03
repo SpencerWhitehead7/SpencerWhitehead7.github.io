@@ -64,8 +64,11 @@
   }, fullLoopTime)
 
   // Invoked as soon as the page loads to run animation once and start the loop
-  runAnimation()
-  loopTimeouts.push(loopAnimation(20000))
+  if(!document.hidden){ // Conditional is to avoid starting it if opened in a background tab, which messes with the animation
+    runAnimation()
+    loopTimeouts.push(loopAnimation(20000))
+    console.log(`not hidden`)
+  }
 
   // Utility function to cancel all scheduled animation, reset event lists, and reset HTML
   const clearAnimation = () => {
