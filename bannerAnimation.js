@@ -67,15 +67,21 @@
   runAnimation()
   loopTimeouts.push(loopAnimation(20000))
 
+  // Utility function to cancel all scheduled animation, reset event lists, and reset HTML
+  const clearAnimation = () => {
+    loopTimeouts.forEach(timeout => clearInterval(timeout))
+    singleTimeouts.forEach(timeout => clearTimeout(timeout))
+    loopTimeouts = []
+    singleTimeouts = []
+    banner.innerHTML = `<h1>Hi,&nbsp;<wbr>I'm</h1>`
+  }
+
   // Ends/restarts animation when window loses/gains focus. The text quickly turns to slush without this due to browser behavior on focus change
   const endOrRestartAnimation = () => {
-    if(document.hidden){ // loses focus; cancels the animation loop, cancels all already scheduled animation timeouts and loops, resets banner HTML
-      loopTimeouts.forEach(timeout => clearInterval(timeout))
-      singleTimeouts.forEach(timeout => clearTimeout(timeout))
-      loopTimeouts = []
-      singleTimeouts = []
-      banner.innerHTML = `<h1>Hi,&nbsp;<wbr>I'm</h1>`
-    }else{ // gains focus; runs the animation once and restarts the loop
+    if(document.hidden){ // loses focus; clears all animation
+      clearAnimation()
+    }else{ // gains focus; also clears all animation to handle edge case of being opened in background tab (like by middle click), then runs the animation once and restarts the loop
+      clearAnimation()
       runAnimation()
       loopTimeouts.push(loopAnimation(20000))
     }
