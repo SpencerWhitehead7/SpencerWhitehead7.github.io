@@ -41,11 +41,11 @@ body {
 #banner {
   font-family: 'Roboto Mono', monospace;
   height: 6em;
-  width: 95vw;
+  width: 90vw;
 }
 
 #intro h2{
-  margin: 2vh 0 2vh 2vw;
+  margin: 2vh 2vw;
 }
 
 #skills, #projects {
@@ -53,7 +53,7 @@ body {
 }
 
 #contact {
-  margin: 0 0 10vh 0;
+  margin: 0 0 5vh 0;
 }
 
 .floater:hover {
