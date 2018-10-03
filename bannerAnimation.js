@@ -1,3 +1,7 @@
+// There's no doubting this code is numbingly complicated and, worse, async. There's also a lot of junk for handling edge/special cases, like switching tabs to or away from the page, or opening the page in a background tab. But in a very high level way, the code just runs a function that takes in a bunch of strings and some variables to control the animation's timing. That function calls a function to animate the strings, once per string, after an appropriately calcuated timeout for the animation to run. The animation function also works via timeouts, using the timing control input variables to run a function that makes one random letter appear/disappear until the whole string has rendered in and out. Basically, the first function sets off a horrible cascade of intricately timed (and very fragile) timeouts.
+
+// I'd like to go back and do this all again via request animation frame sometime. I don't know if this is a good use case for that, but it seems at least worth checking out.
+
 {
   // Base element
   const banner = document.getElementById(`banner`)
