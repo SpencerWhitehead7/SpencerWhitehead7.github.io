@@ -5,7 +5,9 @@
     <link rel="icon" href="images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-    <script type="text/javascript" src="app.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine|Roboto+Mono">
+    <script type="text/javascript" src="bannerAnimation.js" defer></script>
+    <script type="text/javascript" src="buttonAnimation.js" defer></script>
   </head>
   
   <body>
@@ -15,16 +17,18 @@
     <div id="content">
       
       <div id="intro">
-        <h1 id="banner">Hi, I</h1>
-        <h4>
+        <div id="banner">
+          <h1>Hi,&nbsp;<wbr>I'm</h1>
+        </div>
+        <h2>
           I taught myself Javascript and graduated from Fullstack Academy of Code in NYC.
-        </h4>
-        <h4>
-          <br/>You can see my projects or learn more about me here, and see virtually everything I've done on <a id="gh-link"  href="https://github.com/SpencerWhitehead7">GitHub</a>.
-        </h4>
-        <h4>
-          <br/>(I also happen to be looking for work.)
-        </h4>
+        </h2>
+        <h2>
+          You can see my projects or learn more about me here, and see virtually everything I've done on <a id="gh-link"  href="https://github.com/SpencerWhitehead7">GitHub</a>.
+        </h2>
+        <h2>
+          (I also happen to be looking for work.)
+        </h2>
       </div>
 
       <div id="skills">
@@ -130,7 +134,7 @@
                 <li>Two factor authentication</li>
                 <li>Slick, modern interface aesthetic</li>  
               </ul>  
-              <b>Development Environment:</b> Agile, with three other developers
+              <p><b>Development Environment:</b> Agile, with three other developers</p>
             </div>  
             <p class="description-text">
               <b>Description:</b> This was my group's final project at Fullstack Academy. After months of working primarily on websites and webapps, we decided to go way out of our comfort zones by making a security oriented app on a different platform with a totally new tech stack. The amount of new technical material, tight deadline, and unfamiliar development tools made the project extremely challenging, but I'm very proud of the final project, our team's work, and the amount we learned.
@@ -163,7 +167,7 @@
                 <li>Intuitive, easy to use interface</li>
                 <li>Won in-house award for technical complexity</li>
               </ul>
-              <b>Development Environment:</b> Solo
+              <p><b>Development Environment:</b> Solo</p>
             </div>
             <p class="description-text">
               <b>Description:</b> This was a solo web-scraping project I began early in 2018 and finished at Fullstack Academy. I actually started it before Fullstack began, but even though I managed scrape and parse sites with a node.js script, I had no idea how to integrate that with the website's frontend. I finished the project during Fullstack once I had learned more, and adapted it into a Chrome extension for a class project. It was my very first original project idea, so this site will always be my child.
@@ -194,7 +198,7 @@
                 <li>Account system with both site-unique accounts and OAuth</li>
                 <li>Tracks and persists cart contents, even if the user has no account or is signed out, including through reloads, multiple visits, and logging into or creating an account</li>
               </ul>
-              <b>Development Environment:</b> Agile, with three other developers
+              <p><b>Development Environment:</b> Agile, with three other developers</p>
             </div>
             <p class="description-text">
               <b>Description:</b> This was my first group project at Fullstack Academy. We drew on all the knowledge from the first part of the course to design and implement an e-commerce site, which somewhat whimsically sold spaceships, and had all the features and technologies we had been studying. On top of this, we were working as a team in an agile environment for the first time, and doing group version control and some TDD.
@@ -222,7 +226,7 @@
                 <li>Generates quotes of varying lengths using a Markov Chain</li>
                 <li>Node.js files which can generate chains and quotes using the input of your choice</li>
               </ul>
-              <b>Development Environment:</b> Solo
+              <p><b>Development Environment:</b> Solo</p>
             </div>
             <p class="description-text">
               <b>Description:</b> This site procedurally generates quotes in the style of <a href="https://www.newyorker.com/culture/persons-of-interest/the-jujitsu-master-turning-an-ancient-art-into-a-modern-science">John Danaher</a>, based on a Markov chain generated from his social media posts. The Markov chain script is generalizable and could be used to generate chains and quotes from any input text. The website uses a precomputed Markov chain derived from Danaher's posts to generate the quotes. This project was especially exciting because it was inspired by <a href="http://thomasfriedmanopedgenerator.com/about.php">the Thomas Friedman op-ed generator</a>, which had seemed like an impossible mystery to me until I started programming.
@@ -249,7 +253,7 @@
                 <li>Published, easily accessible NPM module</li>
                 <li>Simplifies the verbose, space intensive process of writing Redux action creators to a simple, reliable function</li>
               </ul>
-              <b>Development Environment:</b> TDD, with a partner
+              <p><b>Development Environment:</b> TDD, with a partner</p>
             </div>
             <p class="description-text">
               <b>Description:</b> This was a NPM module that simplifies the process of writing Redux action creators. Great as Redux is, there's a lot of verbose boilerplate code, and my partner and I came up with a way to simplify it without sacrificing any functionality. We used the technique in a group project at Fullstack (the e-commerce site) and liked it so much we decided to publish it on NPM.
@@ -275,10 +279,10 @@
               <ul>
                 <li>Pretty much just links, text, CSS, and animations I suppose</li>
               </ul>
-              <b>Development Environment:</b> Solo
+              <p><b>Development Environment:</b> Solo</p>
             </div>
             <p class="description-text">
-              <b>Description:</b> Why, it's the very site you're on now! This site is largely unremarkable, but it used to be the first site I'd ever made with just HTML and CSS. I eventually added JavaScript because I got embarassed by the lack of interactivity and animation, so I've still never made a totally static site. I've also always wanted to make something with parallax scrolling. It's included in the projects section because I'm a completionist. I took the background photo, which is of the Hudon Bridge in NYC.
+              <b>Description:</b> Why, it's the very site you're on now! I've always loved parallax scrolling and I took the photo of the Hudson Bridge in NYC. This site used to be the only thing I'd ever made with just HTML and CSS, but I added some vanilla JS because I was embarrassed by the lack of interactivity (I spent WAY too long on the crazy-complex randomized title animation). It's included in the projects section because I'm a completionist.
             </p>
           </div>
           <!-- <img screenshot?/> -->
@@ -289,10 +293,10 @@
         <h1 class="center-text">Bio</h2>
         <div class="project">
           <p>
-            I graduated from University of Chicago with a Political Science degree, and spent a couple years exploring and working in different roles. I discovered that I loved jobs where I could learn, grow, and develop my skills, which eventually led me to coding.
+            I graduated from University of Chicago with a Political Science degree, and spent a couple years exploring and working in different roles. I discovered that I loved jobs where I could learn, grow, and develop my skills, which led me to programming.
           </p>
           <p>
-            I had no traditional computer science background, but I taught myself Javascript and rapidly fell in love with programming. I loved the creativity of breaking down complex technical problems and solving them piece by piece, and I loved the way every project and algorithm taught me something new. Much as I learned on my own, I wanted to explore programming with classmates and a curriculum, so I applied to <a href="https://www.fullstackacademy.com/">Fullstack Academy of Code</a>.
+            I had no traditional computer science background, but I taught myself Javascript and rapidly fell in love with coding. I loved the creativity of breaking down complex technical problems and solving them piece by piece, and I loved the way every project and algorithm taught me something new. Much as I learned on my own, I wanted to explore programming with classmates and a curriculum, so I applied to <a href="https://www.fullstackacademy.com/">Fullstack Academy of Code</a>.
           </p>
           <p>
             Fullstack is a 17 week intensive full stack (obviously?) web development bootcamp, focusing on JavaScript, Express, Sequelize, React, and Redux. I got a lot out of the technical parts of the program, but I learned even more from working with my classmates and doing group projects. Since the end of the program, I've been TAing a different bootcamp, working on my own projects, learning more basic CS, and looking for full time software engineering positions.
