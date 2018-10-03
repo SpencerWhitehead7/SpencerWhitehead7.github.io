@@ -6,4 +6,4 @@ I'm currently looking for work as a full time, full stack web developer, so if y
 
 ## Future Plans
 
-I plan to keep it updated with my new work, but that's about it.
+I might refactor the banner animation to use request animation frame instead of a chaos of delicately timed callbacks and I plan to keep it updated with my new work, but that's about it.
