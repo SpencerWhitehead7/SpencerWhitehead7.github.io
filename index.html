@@ -104,6 +104,9 @@
             <button type="button" value="twg" class="floater">
               <img src ="images/thewisdomgenerator.png" alt="The Wisdom Generator"/>
             </button>
+            <button type="button" value="ny" class="floater">
+              <img src ="images/notyelp.png" alt="Not Yelp"/>
+            </button>
             <button type="button" value="racf" class="floater">
               <img src ="images/reduxactioncreatorfactory.png" alt="Redux Action Creator Factory"/>
             </button>
@@ -229,6 +232,37 @@
             </div>
             <p class="description-text">
               <b>Description:</b> This site procedurally generates quotes in the style of <a href="https://www.newyorker.com/culture/persons-of-interest/the-jujitsu-master-turning-an-ancient-art-into-a-modern-science">John Danaher</a>, based on a Markov chain generated from his social media posts. The Markov chain script is generalizable and could be used to generate chains and quotes from any input text. The website uses a precomputed Markov chain derived from Danaher's posts to generate the quotes. This project was especially exciting because it was inspired by <a href="http://thomasfriedmanopedgenerator.com/about.php">the Thomas Friedman op-ed generator</a>, which had seemed like an impossible mystery to me until I started programming.
+            </p>
+          </div>
+          <!-- <img screenshot?/> -->
+        </div>
+      
+        <div class="project hidden gone" id="ny">
+          <h3 class="center-text">Not Yelp &nbsp;-&nbsp; Use Yelp API to find new restaurants</h3>
+          <div class="flex-wrapper">
+            <div class="basic-info">
+              <b>Deployment and Code:</b>
+              <ul>
+                <li><a href="https://sw7-not-yelp.herokuapp.com/">Deployment</a></li>
+                <li><a href="https://github.com/SpencerWhitehead7/not-yelp">Source Code</a></li>
+              </ul>
+              <b>Tech stack:</b>
+              <ul>
+                <li>Javascript, Express, React, UIKit, CSS, Yelp API, git</li>
+              </ul>
+              <b>Features:</b>
+              <ul>
+                <li>Uses the Yelp API to retrieve data on restaurants</li>
+                <li>Query restaurants by city, filter results by open status, price, and highest rating</li>
+                <li>Sort on the page by price and rating</li>
+                <li>Responsive design works on screen sizes from full desktop to tiny mobile</li>
+                <li>Dynamically updating page buttons, jump to page feature</li>
+                <li>Site's graphics and icons adhere to Yelp's brand requirements</li>
+              </ul>
+              <p><b>Development Environment:</b> Solo</p>
+            </div>
+            <p class="description-text">
+              <b>Description:</b> This site uses the Yelp API to find restaurants. A user can search by city, find the highest rated restaurants, and filter the results by price and whether or not the restaurant is open. Results can also be sorted on the page. The backend uses Express to serve the site and keep the Yelp API key hidden, and the modular frontend was created with React. The site is fully responsive and was styled with UIKit, my first experience with a CSS framework.
             </p>
           </div>
           <!-- <img screenshot?/> -->
