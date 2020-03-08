@@ -41,8 +41,8 @@ body {
 
 #banner {
   font-family: 'Roboto Mono', monospace;
-  height: 6em;
   width: 90vw;
+  white-space: pre-wrap;
 }
 
 #intro h2{
