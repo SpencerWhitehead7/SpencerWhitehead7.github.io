@@ -4,4 +4,4 @@ A real simple HTML site that collects all my programming work/projects in one pl
 
 ## Future Plans
 
-I might refactor the banner animation to use request animation frame instead of setTimeout, I'd like to implement the medium style background image loading effect and look into native html modules for all the duplicated components where the only thing that differs is text. I'll also add any new side projects.
+I might refactor the banner animation to use request animation frame instead of setTimeout, and I'd like to look into using native html modules for all the duplicated components where the only thing that differs is text. I may also do progressive loading for the individual button images (or just compess them like crazy). The actual content of the site (skills, projects) is due for an update at some point as well. I'll also add any new side projects.
