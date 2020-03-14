@@ -1,361 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Portfolio</title>
-    <link rel="icon" href="images/favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine|Roboto+Mono">
-    <script type="text/javascript" src="bannerAnimation.js" defer></script>
-    <script type="text/javascript" src="buttonAnimation.js" defer></script>
-  </head>
-  
-  <body>
 
-    <div id="content">
-      
-      <div id="intro">
-          <h1  id="banner">Hi, I'm</h1>
-        <h2>
-          In 2018, I taught myself Javascript and graduated from Fullstack Academy of Code, and I'm currently a software engineer at Classpass.
-        </h2>
-        <h2>
-          You can see my projects or learn more about me here, and see virtually everything I've done on <a id="gh-link"  href="https://github.com/SpencerWhitehead7">GitHub</a>.
-        </h2>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Portfolio</title>
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine|Roboto+Mono">
+  <script type="text/javascript" src="bannerAnimation.js" defer></script>
+  <script type="text/javascript" src="buttonAnimation.js" defer></script>
+</head>
 
-      <div id="skills">
-        <h1 class="center-text">Skills</h1>
-        <div class="flex-wrapper">
-          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="floater">
-            <img src="images/javascriptlogo.png" alt="JavaScript">
-          </a>
-          <a href="https://nodejs.org/en/" class="floater">
-            <img src="images/nodelogo.png" alt="Node.js">
-          </a>
-          <a href="https://expressjs.com/" class="floater">
-            <img src="images/expresslogo.png" alt="Express">
-          </a>
-          <a href="https://www.postgresql.org/" class="floater">
-            <img src="images/postgreslogo.png" alt="Posgres">
-          </a>
-          <a href="http://docs.sequelizejs.com/" class="floater">
-            <img src="images/sequelizelogo.png" alt="Sequelize">
-          </a>
-        </div>
-        <div class="flex-wrapper">
-          <a href="https://firebase.google.com/" class="floater">
-            <img src="images/firebaselogo.png" alt="Firebase">
-          </a>
-          <a href="https://reactjs.org/" class="floater">
-            <img src="images/reactlogo.png" alt="React & React Native">
-          </a>
-          <a href="https://redux.js.org/" class="floater">
-            <img src="images/reduxlogo.png" alt="Redux">
-          </a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" class="floater">
-            <img src="images/html5logo.png" alt="HTML5">
-          </a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" class="floater">
-            <img src="images/css3logo.png" alt="CSS3">
-          </a>
-        </div>
-        <div class="flex-wrapper">
-          <a href="https://webpack.js.org/" class="floater">
-            <img src="images/webpacklogo.png" alt="Webpack">
-          </a>
-          <a href="https://babeljs.io/" class="floater">
-            <img src="images/babellogo.png" alt="Babel">
-          </a>
-          <a href="https://mochajs.org/" class="floater">
-            <img src="images/mochalogo.png" alt="Mocha">
-          </a>
-          <a href="http://www.chaijs.com/" class="floater">
-            <img src="images/chailogo.png" alt="Chai">
-          </a>
-          <a href="https://jquery.com/" class="floater">
-            <img src="images/jquerylogo.png" alt="Jquery">
-          </a>
-        </div>
-      </div>
+<body>
 
-      
-      <div id="projects">
-        <h1 class="center-text" id="projects-header">Projects</h1>
-        <div id="project-buttons">
-          <div class="flex-wrapper">
-            <button type="button" value="wsios" class="floater">
-              <img src ="images/whatsstackios.png" alt="WhatsStackIOS"/>
-            </button>
-            <button type="button" value="ps" class="floater">
-              <img src ="images/platescraper.png" alt="Plate Scraper"/>
-            </button>
-            <button type="button" value="sd" class="floater">
-              <img src ="images/starshipdepot.png" alt="Starship Depot"/>
-            </button>
-          </div>
-          <div class="flex-wrapper">
-            <button type="button" value="twg" class="floater">
-              <img src ="images/thewisdomgenerator.png" alt="The Wisdom Generator"/>
-            </button>
-            <button type="button" value="ny" class="floater">
-              <img src ="images/notyelp.png" alt="Not Yelp"/>
-            </button>
-            <button type="button" value="racf" class="floater">
-              <img src ="images/reduxactioncreatorfactory.png" alt="Redux Action Creator Factory"/>
-            </button>
-            <button type="button" value="port" class="floater">
-              <img src ="images/portfolio.png"  alt="Portfolio"/>
-            </button>
-          </div>
-        </div>
-        
-        <div class="project hidden gone" id="wsios">
-          <h3 class="center-text">WhatsStackIOS &nbsp;-&nbsp; End to End Encrypted iOS Messaging App</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://www.youtube.com/watch?v=DFY-O0ndMxs&list=PLx0iOsdUOUmm9Nhg_6Z4bxXPugbSrgbwE&index=10">Deploying to the app store was impractical, but here's a video of the app and a presentation</a></li>
-                <li><a href="https://github.com/the-four-o-fours/WhatsStackIOS">Source Code</a></li>
-              </ul>  
-              <b>Tech stack:</b>
-              <ul>
-                <li>React Native, Redux, Firebase, Xcode, git</li>
-              </ul>  
-              <b>Features:</b>
-              <ul>
-                <li>One to one, group, and image messaging</li>
-                <li>End to end encryption</li>
-                <li>Two factor authentication</li>
-                <li>Slick, modern interface aesthetic</li>  
-              </ul>  
-              <p><b>Development Environment:</b> Agile, with three other developers</p>
-            </div>  
-            <p class="description-text">
-              <b>Description:</b> This was my group's final project at Fullstack Academy. After months of working primarily on websites and webapps, we decided to go way out of our comfort zones by making a security oriented app on a different platform with a totally new tech stack. The amount of new technical material, tight deadline, and unfamiliar development tools made the project extremely challenging, but I'm very proud of the final project, our team's work, and the amount we learned.
-            </p>  
-          </div>  
-          <!-- <img screenshot?/> -->
-        </div>
-        
-        <div class="project hidden gone" id="ps">
-          <h3 class="center-text">Plate Scraper &nbsp;-&nbsp; Web Scraper for Recipe Sites</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://chrome.google.com/webstore/detail/plate-scraper/pohdgoipnoaopknopkpdeooophfnkmel">Chrome Extension Deployment</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Chrome_Extension">Chrome Extension Source Code</a></li>
-                <li><a href="https://plate-scraper.herokuapp.com/">Website Deployment</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Minimal">Website Source Code</a></li>
-              </ul>  
-              <b>Tech stack:</b>
-              <ul>
-                <li>Express, React, Cheerio, Request-Promise-Native, Chrome API, Mocha, Chai, CSS, git</li>
-              </ul>
-              <b>Features:</b>
-              <ul>
-                <li>Get recipe titles, ingredients, and instructions as plaintext in one click</li>
-                <li>Text is minimally formatted, easily-editable and downloadable</li>
-                <li>Supports the top 15 (by traffic) recipe aggregation sites</li>
-                <li>Available as a Chrome extension, or regular no-installation required webapp</li>
-                <li>Intuitive, easy to use interface</li>
-                <li>Won in-house award for technical complexity</li>
-              </ul>
-              <p><b>Development Environment:</b> Solo</p>
-            </div>
-            <p class="description-text">
-              <b>Description:</b> This was a solo web-scraping project I began early in 2018 and finished at Fullstack Academy. I actually started it before Fullstack began, but even though I managed scrape and parse sites with a node.js script, I had no idea how to integrate that with the website's frontend. I finished the project during Fullstack once I had learned more, and adapted it into a Chrome extension for a class project. It was my very first original project idea, so this site will always be my child.
-            </p>
-          </div>
-          <!-- <img screenshot?/> -->
-        </div>
-        
-        <div class="project hidden gone" id="sd">
-          <h3 class="center-text">Starship Depot &nbsp;-&nbsp; E-commerce Site</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://fellowship-1804-graceshopper.herokuapp.com/">Deployment</a></li>
-                <li><a href="https://github.com/the-fellowship-1804/fellowship-of-shoppers">Source Code</a></li>
-              </ul>
-              <b>Tech stack:</b>
-              <ul>
-                <li>Express, Sequelize, React, Redux, Stripe, Mocha, Chai, CSS, git</li>
-              </ul>
-              <b>Features:</b>
-              <ul>
-                <li>User and product databases</li>
-                <li>Sort, filter, and browse products</li>
-                <li>Track cart contents and order history</li>
-                <li>Checkout carts with secure credit card payment system</li>
-                <li>Account system with both site-unique accounts and OAuth</li>
-                <li>Tracks and persists cart contents, even if the user has no account or is signed out, including through reloads, multiple visits, and logging into or creating an account</li>
-              </ul>
-              <p><b>Development Environment:</b> Agile, with three other developers</p>
-            </div>
-            <p class="description-text">
-              <b>Description:</b> This was my first group project at Fullstack Academy. We drew on all the knowledge from the first part of the course to design and implement an e-commerce site, which somewhat whimsically sold spaceships, and had all the features and technologies we had been studying. On top of this, we were working as a team in an agile environment for the first time, and doing group version control and some TDD.
-            </p>
-          </div>
-          <!-- <img screenshot?/> -->
-        </div>
-        
-        <div class="project hidden gone" id="twg">
-          <h3 class="center-text">The Wisdom Generator &nbsp;-&nbsp; Quote Generation with a Markov Chain</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://markov-danaher-quotes.herokuapp.com/">Deployment</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/markov-danaher-quotes-site">Website Source Code</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/markov-danaher-quotes">Markov Chain Source Code</a></li>
-              </ul>
-              <b>Tech stack:</b>
-              <ul>
-                <li>Javascript, Express, HTML, CSS, git</li>
-              </ul>
-              <b>Features:</b>
-              <ul>
-                <li>Generates quotes of varying lengths using a Markov Chain</li>
-                <li>Node.js files which can generate chains and quotes using the input of your choice</li>
-              </ul>
-              <p><b>Development Environment:</b> Solo</p>
-            </div>
-            <p class="description-text">
-              <b>Description:</b> This site procedurally generates quotes in the style of <a href="https://www.newyorker.com/culture/persons-of-interest/the-jujitsu-master-turning-an-ancient-art-into-a-modern-science">John Danaher</a>, based on a Markov chain generated from his social media posts. The Markov chain script is generalizable and could be used to generate chains and quotes from any input text. The website uses a precomputed Markov chain derived from Danaher's posts to generate the quotes. This project was especially exciting because it was inspired by <a href="http://thomasfriedmanopedgenerator.com/about.php">the Thomas Friedman op-ed generator</a>, which had seemed like an impossible mystery to me until I started programming.
-            </p>
-          </div>
-          <!-- <img screenshot?/> -->
-        </div>
-      
-        <div class="project hidden gone" id="ny">
-          <h3 class="center-text">Not Yelp &nbsp;-&nbsp; Use Yelp API to find new restaurants</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://sw7-not-yelp.herokuapp.com/">Deployment</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/not-yelp">Source Code</a></li>
-              </ul>
-              <b>Tech stack:</b>
-              <ul>
-                <li>Javascript, Express, React, UIKit, CSS, Yelp API, git</li>
-              </ul>
-              <b>Features:</b>
-              <ul>
-                <li>Uses the Yelp API to retrieve data on restaurants</li>
-                <li>Query restaurants by city, filter results by open status, price, and highest rating</li>
-                <li>Sort on the page by price and rating</li>
-                <li>Responsive design works on screen sizes from full desktop to tiny mobile</li>
-                <li>Dynamically updating page buttons, jump to page feature</li>
-                <li>Site's graphics and icons adhere to Yelp's brand requirements</li>
-              </ul>
-              <p><b>Development Environment:</b> Solo</p>
-            </div>
-            <p class="description-text">
-              <b>Description:</b> This site uses the Yelp API to find restaurants. A user can search by city, find the highest rated restaurants, and filter the results by price and whether or not the restaurant is open. Results can also be sorted on the page. The backend uses Express to serve the site and keep the Yelp API key hidden, and the modular frontend was created with React. The site is fully responsive and was styled with UIKit, my first experience with a CSS framework.
-            </p>
-          </div>
-          <!-- <img screenshot?/> -->
-        </div>
-      
-        <div class="project hidden gone" id="racf">
-          <h3 class="center-text">Redux Action Creator Factory &nbsp;-&nbsp; NPM Module</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://www.npmjs.com/package/redux-action-creator-factory">Deployment</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/redux-action-creator-factory">Source Code</a></li>
-              </ul>
-              <b>Tech stack:</b>
-              <ul>
-                <li>Javascript, Mocha, Chai, git</li>
-              </ul>
-              <b>Features:</b>
-              <ul>
-                <li>Published, easily accessible NPM module</li>
-                <li>Simplifies the verbose, space intensive process of writing Redux action creators to a simple, reliable function</li>
-              </ul>
-              <p><b>Development Environment:</b> TDD, with a partner</p>
-            </div>
-            <p class="description-text">
-              <b>Description:</b> This was a NPM module that simplifies the process of writing Redux action creators. Great as Redux is, there's a lot of verbose boilerplate code, and my partner and I came up with a way to simplify it without sacrificing any functionality. We used the technique in a group project at Fullstack (the e-commerce site) and liked it so much we decided to publish it on NPM.
-            </p>
-          </div>
-          <!-- <img screenshot?/> -->
-        </div>
-        
-        <div class="project hidden gone" id="port">
-          <h3 class="center-text">Portfolio &nbsp;-&nbsp; Professional Infomation Site</h3>
-          <div class="flex-wrapper">
-            <div class="basic-info">
-              <b>Deployment and Code:</b>
-              <ul>
-                <li><a href="https://spencerwhitehead7.github.io/portfolio">Deployment</a></li>
-                <li><a href="https://github.com/SpencerWhitehead7/portfolio">Source Code</a></li>
-              </ul>
-              <b>Tech stack:</b>
-              <ul>
-                <li>HTML, CSS, git</li>
-              </ul>
-              <b>Features:</b>
-              <ul>
-                <li>Pretty much just links, text, CSS, and animations I suppose</li>
-              </ul>
-              <p><b>Development Environment:</b> Solo</p>
-            </div>
-            <p class="description-text">
-              <b>Description:</b> Why, it's the very site you're on now! I've always loved parallax scrolling and I took the photo of the Hudson Bridge in NYC. This site used to be the only thing I'd ever made with just HTML and CSS, but I added some vanilla JS because I was embarrassed by the lack of interactivity (I spent WAY too long on the crazy-complex randomized title animation). It's included in the projects section because I'm a completionist.
-            </p>
-          </div>
-          <!-- <img screenshot?/> -->
-        </div>
-      </div>
-      
-      <div id="bio">
-        <h1 class="center-text">Bio</h2>
-        <div class="project">
-          <p>
-            I graduated from University of Chicago with a Political Science degree, and spent a couple years exploring and working in different roles. I discovered that I loved jobs where I could learn, grow, and develop my skills, which led me to programming.
-          </p>
-          <p>
-            I had no traditional computer science background, but I taught myself Javascript and rapidly fell in love with coding. I loved the creativity of breaking down complex technical problems and solving them piece by piece, and I loved the way every project and algorithm taught me something new. Much as I learned on my own, I wanted to explore programming with classmates and a curriculum, so I applied to <a href="https://www.fullstackacademy.com/">Fullstack Academy of Code</a>.
-          </p>
-          <p>
-            Fullstack is a 17 week intensive full stack (obviously?) web development bootcamp, focusing on JavaScript, Express, Sequelize, React, and Redux. I got a lot out of the technical parts of the program, but I learned even more from working with my classmates and doing group projects. After the program, I worked as a TA at a different bootcamp, and I'm currently a software engineer at Classpass.
-          </p>
-          <p>
-            Please feel free to...
-          </p>
-        </div>
-      </div>
-      
-      <div id="contact">
-        <h1 class="center-text">Get In Touch</h1>
-        <div class="flex-wrapper">
-          <a href="mailto:SpencerWhitehead7@gmail.com" class="floater">
-            <img src="images/emaillogo.png" alt="email - SpencerWhitehead7@gmail.com"/>
-          </a>
-          <a href="https://www.linkedin.com/in/spencer-whitehead/" class="floater">
-            <img src="images/linkedinlogo.png" alt="LinkedIn"/>
-          </a>
-          <a href="https://github.com/SpencerWhitehead7" class="floater">
-            <img src="images/githublogo.png" alt="GitHub"/>
-          </a>
-          <a href="https://medium.com/@spencerwhitehead7" class="floater">
-            <img src="images/mediumlogo.png" alt="Medium (updated (very) sporadically)"/>
-          </a>
-        </div>      
-      </div>
-        
+  <div id="intro">
+
+    <h1 id="banner">Hi, I'm</h1>
+
+    <h2>
+      In 2018, I taught myself Javascript and graduated from Fullstack Academy of Code, and I'm currently a software
+      engineer at Classpass.
+    </h2>
+    <h2>
+      You can see my projects or learn more about me here, and see virtually everything I've done on <a id="gh-link"
+        href="https://github.com/SpencerWhitehead7">GitHub</a>.
+    </h2>
+
+  </div>
+
+  <div id="skills">
+
+    <h1 class="center-text">Skills</h1>
+
+    <div class="flex-wrapper">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="floater">
+        <img src="images/javascriptlogo.png" alt="JavaScript">
+      </a>
+      <a href="https://nodejs.org/en/" class="floater">
+        <img src="images/nodelogo.png" alt="Node.js">
+      </a>
+      <a href="https://expressjs.com/" class="floater">
+        <img src="images/expresslogo.png" alt="Express">
+      </a>
+      <a href="https://www.postgresql.org/" class="floater">
+        <img src="images/postgreslogo.png" alt="Posgres">
+      </a>
+      <a href="http://docs.sequelizejs.com/" class="floater">
+        <img src="images/sequelizelogo.png" alt="Sequelize">
+      </a>
     </div>
-      
-  </body>
-    
+    <div class="flex-wrapper">
+      <a href="https://firebase.google.com/" class="floater">
+        <img src="images/firebaselogo.png" alt="Firebase">
+      </a>
+      <a href="https://reactjs.org/" class="floater">
+        <img src="images/reactlogo.png" alt="React & React Native">
+      </a>
+      <a href="https://redux.js.org/" class="floater">
+        <img src="images/reduxlogo.png" alt="Redux">
+      </a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" class="floater">
+        <img src="images/html5logo.png" alt="HTML5">
+      </a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" class="floater">
+        <img src="images/css3logo.png" alt="CSS3">
+      </a>
+    </div>
+    <div class="flex-wrapper">
+      <a href="https://webpack.js.org/" class="floater">
+        <img src="images/webpacklogo.png" alt="Webpack">
+      </a>
+      <a href="https://babeljs.io/" class="floater">
+        <img src="images/babellogo.png" alt="Babel">
+      </a>
+      <a href="https://mochajs.org/" class="floater">
+        <img src="images/mochalogo.png" alt="Mocha">
+      </a>
+      <a href="http://www.chaijs.com/" class="floater">
+        <img src="images/chailogo.png" alt="Chai">
+      </a>
+      <a href="https://jquery.com/" class="floater">
+        <img src="images/jquerylogo.png" alt="Jquery">
+      </a>
+    </div>
+
+  </div>
+
+  <div id="projects">
+
+    <h1 class="center-text" id="projects-header">Projects</h1>
+
+    <div id="project-buttons">
+      <div class="flex-wrapper">
+        <button type="button" value="wsios" class="floater">
+          <img src="images/whatsstackios.png" alt="WhatsStackIOS" />
+        </button>
+        <button type="button" value="ps" class="floater">
+          <img src="images/platescraper.png" alt="Plate Scraper" />
+        </button>
+        <button type="button" value="sd" class="floater">
+          <img src="images/starshipdepot.png" alt="Starship Depot" />
+        </button>
+      </div>
+      <div class="flex-wrapper">
+        <button type="button" value="twg" class="floater">
+          <img src="images/thewisdomgenerator.png" alt="The Wisdom Generator" />
+        </button>
+        <button type="button" value="ny" class="floater">
+          <img src="images/notyelp.png" alt="Not Yelp" />
+        </button>
+        <button type="button" value="racf" class="floater">
+          <img src="images/reduxactioncreatorfactory.png" alt="Redux Action Creator Factory" />
+        </button>
+        <button type="button" value="port" class="floater">
+          <img src="images/portfolio.png" alt="Portfolio" />
+        </button>
+      </div>
+    </div>
+
+    <div class="project hidden gone" id="wsios">
+      <h3 class="center-text">WhatsStackIOS &nbsp;-&nbsp; End to End Encrypted iOS Messaging App</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a
+                href="https://www.youtube.com/watch?v=DFY-O0ndMxs&list=PLx0iOsdUOUmm9Nhg_6Z4bxXPugbSrgbwE&index=10">Deploying
+                to the app store was impractical, but here's a video of the app and a presentation</a></li>
+            <li><a href="https://github.com/the-four-o-fours/WhatsStackIOS">Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>React Native, Redux, Firebase, Xcode, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>One to one, group, and image messaging</li>
+            <li>End to end encryption</li>
+            <li>Two factor authentication</li>
+            <li>Slick, modern interface aesthetic</li>
+          </ul>
+          <p><b>Development Environment:</b> Agile, with three other developers</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This was my group's final project at Fullstack Academy. After months of working primarily
+          on websites and webapps, we decided to go way out of our comfort zones by making a security oriented app on a
+          different platform with a totally new tech stack. The amount of new technical material, tight deadline, and
+          unfamiliar development tools made the project extremely challenging, but I'm very proud of the final project,
+          our team's work, and the amount we learned.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project hidden gone" id="ps">
+      <h3 class="center-text">Plate Scraper &nbsp;-&nbsp; Web Scraper for Recipe Sites</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a
+                href="https://chrome.google.com/webstore/detail/plate-scraper/pohdgoipnoaopknopkpdeooophfnkmel">Chrome
+                Extension Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Chrome_Extension">Chrome Extension Source
+                Code</a></li>
+            <li><a href="https://plate-scraper.herokuapp.com/">Website Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/Recipe_Scraper_Minimal">Website Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>Express, React, Cheerio, Request-Promise-Native, Chrome API, Mocha, Chai, CSS, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>Get recipe titles, ingredients, and instructions as plaintext in one click</li>
+            <li>Text is minimally formatted, easily-editable and downloadable</li>
+            <li>Supports the top 15 (by traffic) recipe aggregation sites</li>
+            <li>Available as a Chrome extension, or regular no-installation required webapp</li>
+            <li>Intuitive, easy to use interface</li>
+            <li>Won in-house award for technical complexity</li>
+          </ul>
+          <p><b>Development Environment:</b> Solo</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This was a solo web-scraping project I began early in 2018 and finished at Fullstack
+          Academy. I actually started it before Fullstack began, but even though I managed scrape and parse sites with a
+          node.js script, I had no idea how to integrate that with the website's frontend. I finished the project during
+          Fullstack once I had learned more, and adapted it into a Chrome extension for a class project. It was my very
+          first original project idea, so this site will always be my child.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project hidden gone" id="sd">
+      <h3 class="center-text">Starship Depot &nbsp;-&nbsp; E-commerce Site</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a href="https://fellowship-1804-graceshopper.herokuapp.com/">Deployment</a></li>
+            <li><a href="https://github.com/the-fellowship-1804/fellowship-of-shoppers">Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>Express, Sequelize, React, Redux, Stripe, Mocha, Chai, CSS, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>User and product databases</li>
+            <li>Sort, filter, and browse products</li>
+            <li>Track cart contents and order history</li>
+            <li>Checkout carts with secure credit card payment system</li>
+            <li>Account system with both site-unique accounts and OAuth</li>
+            <li>Tracks and persists cart contents, even if the user has no account or is signed out, including through
+              reloads, multiple visits, and logging into or creating an account</li>
+          </ul>
+          <p><b>Development Environment:</b> Agile, with three other developers</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This was my first group project at Fullstack Academy. We drew on all the knowledge from
+          the first part of the course to design and implement an e-commerce site, which somewhat whimsically sold
+          spaceships, and had all the features and technologies we had been studying. On top of this, we were working as
+          a team in an agile environment for the first time, and doing group version control and some TDD.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project hidden gone" id="twg">
+      <h3 class="center-text">The Wisdom Generator &nbsp;-&nbsp; Quote Generation with a Markov Chain</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a href="https://markov-danaher-quotes.herokuapp.com/">Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/markov-danaher-quotes-site">Website Source Code</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/markov-danaher-quotes">Markov Chain Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>Javascript, Express, HTML, CSS, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>Generates quotes of varying lengths using a Markov Chain</li>
+            <li>Node.js files which can generate chains and quotes using the input of your choice</li>
+          </ul>
+          <p><b>Development Environment:</b> Solo</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This site procedurally generates quotes in the style of <a
+            href="https://www.newyorker.com/culture/persons-of-interest/the-jujitsu-master-turning-an-ancient-art-into-a-modern-science">John
+            Danaher</a>, based on a Markov chain generated from his social media posts. The Markov chain script is
+          generalizable and could be used to generate chains and quotes from any input text. The website uses a
+          precomputed Markov chain derived from Danaher's posts to generate the quotes. This project was especially
+          exciting because it was inspired by <a href="http://thomasfriedmanopedgenerator.com/about.php">the Thomas
+            Friedman op-ed generator</a>, which had seemed like an impossible mystery to me until I started programming.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project hidden gone" id="ny">
+      <h3 class="center-text">Not Yelp &nbsp;-&nbsp; Use Yelp API to find new restaurants</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a href="https://sw7-not-yelp.herokuapp.com/">Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/not-yelp">Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>Javascript, Express, React, UIKit, CSS, Yelp API, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>Uses the Yelp API to retrieve data on restaurants</li>
+            <li>Query restaurants by city, filter results by open status, price, and highest rating</li>
+            <li>Sort on the page by price and rating</li>
+            <li>Responsive design works on screen sizes from full desktop to tiny mobile</li>
+            <li>Dynamically updating page buttons, jump to page feature</li>
+            <li>Site's graphics and icons adhere to Yelp's brand requirements</li>
+          </ul>
+          <p><b>Development Environment:</b> Solo</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This site uses the Yelp API to find restaurants. A user can search by city, find the
+          highest rated restaurants, and filter the results by price and whether or not the restaurant is open. Results
+          can also be sorted on the page. The backend uses Express to serve the site and keep the Yelp API key hidden,
+          and the modular frontend was created with React. The site is fully responsive and was styled with UIKit, my
+          first experience with a CSS framework.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project hidden gone" id="racf">
+      <h3 class="center-text">Redux Action Creator Factory &nbsp;-&nbsp; NPM Module</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a href="https://www.npmjs.com/package/redux-action-creator-factory">Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/redux-action-creator-factory">Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>Javascript, Mocha, Chai, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>Published, easily accessible NPM module</li>
+            <li>Simplifies the verbose, space intensive process of writing Redux action creators to a simple, reliable
+              function</li>
+          </ul>
+          <p><b>Development Environment:</b> TDD, with a partner</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> This was a NPM module that simplifies the process of writing Redux action creators. Great
+          as Redux is, there's a lot of verbose boilerplate code, and my partner and I came up with a way to simplify it
+          without sacrificing any functionality. We used the technique in a group project at Fullstack (the e-commerce
+          site) and liked it so much we decided to publish it on NPM.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+    <div class="project hidden gone" id="port">
+      <h3 class="center-text">Portfolio &nbsp;-&nbsp; Professional Infomation Site</h3>
+      <div class="flex-wrapper">
+        <div class="basic-info">
+          <b>Deployment and Code:</b>
+          <ul>
+            <li><a href="https://spencerwhitehead7.github.io/portfolio">Deployment</a></li>
+            <li><a href="https://github.com/SpencerWhitehead7/portfolio">Source Code</a></li>
+          </ul>
+          <b>Tech stack:</b>
+          <ul>
+            <li>HTML, CSS, git</li>
+          </ul>
+          <b>Features:</b>
+          <ul>
+            <li>Pretty much just links, text, CSS, and animations I suppose</li>
+          </ul>
+          <p><b>Development Environment:</b> Solo</p>
+        </div>
+        <p class="description-text">
+          <b>Description:</b> Why, it's the very site you're on now! I've always loved parallax scrolling and I took the
+          photo of the Hudson Bridge in NYC. This site used to be the only thing I'd ever made with just HTML and CSS,
+          but I added some vanilla JS because I was embarrassed by the lack of interactivity (I spent WAY too long on
+          the crazy-complex randomized title animation). It's included in the projects section because I'm a
+          completionist.
+        </p>
+      </div>
+      <!-- <img screenshot?/> -->
+    </div>
+
+  </div>
+
+  <div id="bio">
+
+    <h1 class="center-text">Bio</h1>
+
+    <div class="project">
+      <p>
+        I graduated from University of Chicago with a Political Science degree, and spent a couple years exploring and
+        working in different roles. I discovered that I loved jobs where I could learn, grow, and develop my skills,
+        which led me to programming.
+      </p>
+      <p>
+        I had no traditional computer science background, but I taught myself Javascript and rapidly fell in love with
+        coding. I loved the creativity of breaking down complex technical problems and solving them piece by piece, and
+        I loved the way every project and algorithm taught me something new. Much as I learned on my own, I wanted to
+        explore programming with classmates and a curriculum, so I applied to <a
+          href="https://www.fullstackacademy.com/">Fullstack Academy of Code</a>.
+      </p>
+      <p>
+        Fullstack is a 17 week intensive full stack (obviously?) web development bootcamp, focusing on JavaScript,
+        Express, Sequelize, React, and Redux. I got a lot out of the technical parts of the program, but I learned even
+        more from working with my classmates and doing group projects. After the program, I worked as a TA at a
+        different bootcamp, and I'm currently a software engineer at Classpass.
+      </p>
+      <p>
+        Please feel free to...
+      </p>
+    </div>
+
+  </div>
+
+  <div id="contact">
+
+    <h1 class="center-text">Get In Touch</h1>
+
+    <div class="flex-wrapper">
+      <a href="mailto:SpencerWhitehead7@gmail.com" class="floater">
+        <img src="images/emaillogo.png" alt="email - SpencerWhitehead7@gmail.com" />
+      </a>
+      <a href="https://www.linkedin.com/in/spencer-whitehead/" class="floater">
+        <img src="images/linkedinlogo.png" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/SpencerWhitehead7" class="floater">
+        <img src="images/githublogo.png" alt="GitHub" />
+      </a>
+      <a href="https://medium.com/@spencerwhitehead7" class="floater">
+        <img src="images/mediumlogo.png" alt="Medium (updated (very) sporadically)" />
+      </a>
+    </div>
+
+  </div>
+
+</body>
+
 </html>
-    

@@ -1,18 +1,8 @@
-html { 
+body {
   background: url(images/bg.png) no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
-}
-
-body {
-  height: 100%;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.25em;
   color: white;
-}
-
-#content {
-  position: absolute;
 }
 
 .flex-wrapper {
@@ -36,12 +26,11 @@ body {
 }
 
 #intro {
-  margin: 20vh 0 20vh 4vw;
+  margin: 5vh 0 20vh 4vw;
 }
 
 #banner {
   font-family: 'Roboto Mono', monospace;
-  width: 90vw;
   white-space: pre-wrap;
 }
 
