@@ -48,7 +48,7 @@ const randomLettersApperator = async (element, strings, options = {}) => {
   let displayStrings = generateDisplayStrings()
 
   while (true) {
-    const displayCurrString = new Promise(async (resolve, _) => {
+    const displayCurrString = async () => {
       let letterIndex = 0
       let isIncreasing = true
 
@@ -63,14 +63,13 @@ const randomLettersApperator = async (element, strings, options = {}) => {
         }
         isIncreasing ? letterIndex++ : letterIndex--
       }
-      resolve()
-    })
+    }
 
     const shuffleNextString = new Promise((resolve, _) => {
       resolve(generateDisplayStrings())
     })
 
-    const [shuffledNextString] = await Promise.all([shuffleNextString, displayCurrString])
+    const [shuffledNextString] = await Promise.all([shuffleNextString, displayCurrString()])
     displayStrings = shuffledNextString
 
     await animate(displayBlank)
