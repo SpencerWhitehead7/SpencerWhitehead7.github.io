@@ -1,36 +1,39 @@
 const banner = document.getElementById(`banner`)
 
-const stringProcessor = string => string.split(``).map((letter, index) => ({ letter, index }))
+const generateDisplayStringsFactory = strings => {
+  let stringIndex = 0
 
-const shuffler = arr => {
-  for (let i = 0; i < arr.length; i++) {
-    const lastUnshuffledIndex = arr.length - 1 - i
-    const lastUnshuffledElement = arr[lastUnshuffledIndex]
-    const shuffledIndex = Math.floor(Math.random() * (arr.length - i))
-    const shuffledElement = arr[shuffledIndex]
-    arr[shuffledIndex] = lastUnshuffledElement
-    arr[lastUnshuffledIndex] = shuffledElement
+  return () => {
+    const letterIndexArr = strings[stringIndex].split(``).map((letter, index) => ({ letter, index }))
+
+    for (let i = 0; i < letterIndexArr.length; i++) {
+      const lastUnshuffledIndex = letterIndexArr.length - 1 - i
+      const lastUnshuffledElement = letterIndexArr[lastUnshuffledIndex]
+      const shuffledIndex = Math.floor(Math.random() * (letterIndexArr.length - i))
+      const shuffledElement = letterIndexArr[shuffledIndex]
+      letterIndexArr[shuffledIndex] = lastUnshuffledElement
+      letterIndexArr[lastUnshuffledIndex] = shuffledElement
+    }
+
+    const blankArr = new Array(letterIndexArr.length).fill(` `)
+    const partialStrings = [blankArr.join(``)]
+    letterIndexArr.forEach(({ letter, index }) => {
+      blankArr[index] = letter
+      partialStrings.push(blankArr.join(``))
+    })
+
+    stringIndex = (stringIndex + 1) % strings.length
+
+    return partialStrings
   }
-  return arr
-}
-
-const displayer = arr => {
-  const blankArr = new Array(arr.length).fill(` `)
-  const results = [blankArr.join(``)]
-  arr.forEach(({ letter, index }) => {
-    blankArr[index] = letter
-    results.push(blankArr.join(``))
-  })
-  return results
 }
 
 const randomLettersApperator = async (element, strings, options = {}) => {
   const { baseStr = ``, letterInterval = 100, displayBlank = 500, displayFull = 100 } = options
 
-  let stringIndex = 0
-  let currString = strings[stringIndex]
+  const generateDisplayStrings = generateDisplayStringsFactory(strings)
 
-  let partialStringsToDisplay = displayer(shuffler(stringProcessor(currString)))
+  let displayStrings = generateDisplayStrings()
 
   let framesWaited = 1
   const animator = (framesToWait, fnsToRunOnCompletion) => {
@@ -54,11 +57,11 @@ const randomLettersApperator = async (element, strings, options = {}) => {
 
       while (letterIndex !== -1) {
         await new Promise((resolve, _) => {
-          const updateElement = () => { element.innerText = `${baseStr}${partialStringsToDisplay[letterIndex]}` }
+          const updateElement = () => { element.innerText = `${baseStr}${displayStrings[letterIndex]}` }
           animator(letterInterval, [updateElement, resolve])
         })
 
-        if (letterIndex === partialStringsToDisplay.length - 1) {
+        if (letterIndex === displayStrings.length - 1) {
           isIncreasing = false
 
           await new Promise((resolve, _) => {
@@ -71,13 +74,11 @@ const randomLettersApperator = async (element, strings, options = {}) => {
     })
 
     const shuffleNextString = new Promise((resolve, _) => {
-      stringIndex = (stringIndex + 1) % strings.length
-      currString = strings[stringIndex]
-      resolve(displayer(shuffler(stringProcessor(currString))))
+      resolve(generateDisplayStrings())
     })
 
     const [shuffledNextString] = await Promise.all([shuffleNextString, displayCurrString])
-    partialStringsToDisplay = shuffledNextString
+    displayStrings = shuffledNextString
 
     await new Promise((resolve, _) => {
       animator(displayBlank, resolve)
