@@ -29,15 +29,15 @@ const generateDisplayStringsFactory = strings => {
 }
 
 const animate = (framesToWait, ...fnsToRunOnCompletion) => {
-  const controlFrameRate = framesWaited => {
+  const controlFrameRate = (framesWaited, resolve) => {
     if (framesWaited === framesToWait) {
-      fnsToRunOnCompletion.forEach(fn => { fn() })
+      [...fnsToRunOnCompletion, resolve].forEach(fn => { fn() })
     } else {
-      requestAnimationFrame(() => controlFrameRate(framesWaited + 1))
+      requestAnimationFrame(() => controlFrameRate(framesWaited + 1, resolve))
     }
   }
 
-  requestAnimationFrame(() => controlFrameRate(0))
+  return new Promise((resolve, _) => requestAnimationFrame(() => controlFrameRate(0, resolve)))
 }
 
 const randomLettersApperator = async (element, strings, options = {}) => {
@@ -53,17 +53,13 @@ const randomLettersApperator = async (element, strings, options = {}) => {
       let isIncreasing = true
 
       while (letterIndex !== -1) {
-        await new Promise((resolve, _) => {
-          const updateElement = () => { element.innerText = `${baseStr}${displayStrings[letterIndex]}` }
-          animate(letterInterval, updateElement, resolve)
-        })
+        const updateElement = () => { element.innerText = `${baseStr}${displayStrings[letterIndex]}` }
+        await animate(letterInterval, updateElement)
 
         if (letterIndex === displayStrings.length - 1) {
           isIncreasing = false
 
-          await new Promise((resolve, _) => {
-            animate(displayFull, resolve)
-          })
+          await animate(displayFull)
         }
         isIncreasing ? letterIndex++ : letterIndex--
       }
@@ -77,9 +73,7 @@ const randomLettersApperator = async (element, strings, options = {}) => {
     const [shuffledNextString] = await Promise.all([shuffleNextString, displayCurrString])
     displayStrings = shuffledNextString
 
-    await new Promise((resolve, _) => {
-      animate(displayBlank, resolve)
-    })
+    await animate(displayBlank)
   }
 }
 
