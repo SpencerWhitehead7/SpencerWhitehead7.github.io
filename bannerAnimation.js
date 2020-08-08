@@ -16,10 +16,9 @@ const generateDisplayStringsFactory = strings => {
     }
 
     const blankArr = new Array(letterIndexArr.length).fill(` `)
-    const partialStrings = [blankArr.join(``)]
-    letterIndexArr.forEach(({ letter, index }) => {
+    const partialStrings = letterIndexArr.map(({ letter, index }) => {
       blankArr[index] = letter
-      partialStrings.push(blankArr.join(``))
+      return blankArr.join(``)
     })
 
     stringIndex = (stringIndex + 1) % strings.length
@@ -44,7 +43,9 @@ const animateString = async (element, options, displayStrings, displayStringInde
   const { baseStr = ``, letterInterval = 12, displayFull = 120, displayBlank = 60 } = options
 
   if (displayStringIndex === -1) {
-    await animate(displayBlank)
+    const clearElement = () => { element.innerText = baseStr }
+    await animate(letterInterval, clearElement)
+    await animate(Math.max(displayBlank - letterInterval, 0))
     return
   }
 
@@ -52,7 +53,7 @@ const animateString = async (element, options, displayStrings, displayStringInde
   await animate(letterInterval, updateElement)
 
   if (displayStringIndex === displayStrings.length - 1) {
-    await animate(displayFull)
+    await animate(Math.max(displayFull - letterInterval, 0))
     isIncreasing = false
   }
 
