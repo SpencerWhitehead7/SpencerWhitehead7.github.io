@@ -3,7 +3,7 @@ const banner = document.getElementById(`banner`)
 const generateDisplayStringsFactory = strings => {
   let stringIndex = 0
 
-  return () => {
+  return () => new Promise((resolve, _) => {
     const letterIndexArr = strings[stringIndex].split(``).map((letter, index) => ({ letter, index }))
 
     for (let i = 0; i < letterIndexArr.length; i++) {
@@ -24,8 +24,8 @@ const generateDisplayStringsFactory = strings => {
 
     stringIndex = (stringIndex + 1) % strings.length
 
-    return partialStrings
-  }
+    resolve(partialStrings)
+  })
 }
 
 const animate = (framesToWait, ...fnsToRunOnCompletion) => {
@@ -45,7 +45,7 @@ const randomLettersApperator = async (element, strings, options = {}) => {
 
   const generateDisplayStrings = generateDisplayStringsFactory(strings)
 
-  let displayStrings = generateDisplayStrings()
+  let displayStrings = await generateDisplayStrings()
 
   while (true) {
     const displayCurrString = async () => {
@@ -65,12 +65,7 @@ const randomLettersApperator = async (element, strings, options = {}) => {
       }
     }
 
-    const shuffleNextString = new Promise((resolve, _) => {
-      resolve(generateDisplayStrings())
-    })
-
-    const [shuffledNextString] = await Promise.all([shuffleNextString, displayCurrString()])
-    displayStrings = shuffledNextString
+    ([displayStrings] = await Promise.all([generateDisplayStrings(), displayCurrString()]))
 
     await animate(displayBlank)
   }
