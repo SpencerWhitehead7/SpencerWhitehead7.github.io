@@ -40,38 +40,37 @@ const animate = (framesToWait, ...fnsToRunOnCompletion) => {
   return new Promise((resolve, _) => requestAnimationFrame(() => controlFrameRate(0, resolve)))
 }
 
-const randomLettersApperator = async (element, strings, options = {}) => {
-  const { baseStr = ``, letterInterval = 100, displayBlank = 500, displayFull = 100 } = options
+const animateString = async (element, options, displayStrings, displayStringIndex = 0, isIncreasing = true) => {
+  const { baseStr = ``, letterInterval = 12, displayFull = 120, displayBlank = 60 } = options
 
+  if (displayStringIndex === -1) {
+    await animate(displayBlank)
+    return
+  }
+
+  const updateElement = () => { element.innerText = `${baseStr}${displayStrings[displayStringIndex]}` }
+  await animate(letterInterval, updateElement)
+
+  if (displayStringIndex === displayStrings.length - 1) {
+    await animate(displayFull)
+    isIncreasing = false
+  }
+
+  isIncreasing ? displayStringIndex++ : displayStringIndex--
+
+  return animateString(element, options, displayStrings, displayStringIndex, isIncreasing)
+}
+
+const runAnimation = async (element, strings, options = {}) => {
   const generateDisplayStrings = generateDisplayStringsFactory(strings)
-
   let displayStrings = await generateDisplayStrings()
 
   while (true) {
-    const displayCurrString = async () => {
-      let letterIndex = 0
-      let isIncreasing = true
-
-      while (letterIndex !== -1) {
-        const updateElement = () => { element.innerText = `${baseStr}${displayStrings[letterIndex]}` }
-        await animate(letterInterval, updateElement)
-
-        if (letterIndex === displayStrings.length - 1) {
-          isIncreasing = false
-
-          await animate(displayFull)
-        }
-        isIncreasing ? letterIndex++ : letterIndex--
-      }
-    }
-
-    ([displayStrings] = await Promise.all([generateDisplayStrings(), displayCurrString()]))
-
-    await animate(displayBlank)
+    ([displayStrings] = await Promise.all([generateDisplayStrings(), animateString(element, options, displayStrings)]))
   }
 }
 
-randomLettersApperator(
+runAnimation(
   banner,
   [
     `Spencer Whitehead`,
