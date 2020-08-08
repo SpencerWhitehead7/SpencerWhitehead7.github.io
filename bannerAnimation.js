@@ -28,26 +28,24 @@ const generateDisplayStringsFactory = strings => {
   }
 }
 
+const animate = (framesToWait, ...fnsToRunOnCompletion) => {
+  const controlFrameRate = framesWaited => {
+    if (framesWaited === framesToWait) {
+      fnsToRunOnCompletion.forEach(fn => { fn() })
+    } else {
+      requestAnimationFrame(() => controlFrameRate(framesWaited + 1))
+    }
+  }
+
+  requestAnimationFrame(() => controlFrameRate(0))
+}
+
 const randomLettersApperator = async (element, strings, options = {}) => {
   const { baseStr = ``, letterInterval = 100, displayBlank = 500, displayFull = 100 } = options
 
   const generateDisplayStrings = generateDisplayStringsFactory(strings)
 
   let displayStrings = generateDisplayStrings()
-
-  let framesWaited = 1
-  const animator = (framesToWait, ...fnsToRunOnCompletion) => {
-    const animationFn = () => {
-      if (framesWaited === framesToWait) {
-        framesWaited = 1
-        fnsToRunOnCompletion.forEach(fn => { fn() })
-      } else {
-        framesWaited++
-        requestAnimationFrame(animationFn)
-      }
-    }
-    requestAnimationFrame(animationFn)
-  }
 
   while (true) {
     const displayCurrString = new Promise(async (resolve, _) => {
@@ -57,14 +55,14 @@ const randomLettersApperator = async (element, strings, options = {}) => {
       while (letterIndex !== -1) {
         await new Promise((resolve, _) => {
           const updateElement = () => { element.innerText = `${baseStr}${displayStrings[letterIndex]}` }
-          animator(letterInterval, updateElement, resolve)
+          animate(letterInterval, updateElement, resolve)
         })
 
         if (letterIndex === displayStrings.length - 1) {
           isIncreasing = false
 
           await new Promise((resolve, _) => {
-            animator(displayFull, resolve)
+            animate(displayFull, resolve)
           })
         }
         isIncreasing ? letterIndex++ : letterIndex--
@@ -80,7 +78,7 @@ const randomLettersApperator = async (element, strings, options = {}) => {
     displayStrings = shuffledNextString
 
     await new Promise((resolve, _) => {
-      animator(displayBlank, resolve)
+      animate(displayBlank, resolve)
     })
   }
 }
