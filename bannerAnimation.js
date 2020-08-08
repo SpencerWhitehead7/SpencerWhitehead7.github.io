@@ -36,12 +36,11 @@ const randomLettersApperator = async (element, strings, options = {}) => {
   let displayStrings = generateDisplayStrings()
 
   let framesWaited = 1
-  const animator = (framesToWait, fnsToRunOnCompletion) => {
+  const animator = (framesToWait, ...fnsToRunOnCompletion) => {
     const animationFn = () => {
       if (framesWaited === framesToWait) {
         framesWaited = 1
-        const empty = [] // errors on [].concat for reasons
-        empty.concat(fnsToRunOnCompletion).forEach(fn => { fn() })
+        fnsToRunOnCompletion.forEach(fn => { fn() })
       } else {
         framesWaited++
         requestAnimationFrame(animationFn)
@@ -58,7 +57,7 @@ const randomLettersApperator = async (element, strings, options = {}) => {
       while (letterIndex !== -1) {
         await new Promise((resolve, _) => {
           const updateElement = () => { element.innerText = `${baseStr}${displayStrings[letterIndex]}` }
-          animator(letterInterval, [updateElement, resolve])
+          animator(letterInterval, updateElement, resolve)
         })
 
         if (letterIndex === displayStrings.length - 1) {
