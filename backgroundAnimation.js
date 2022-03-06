@@ -1,10 +1,8 @@
 const cachingImage = new Image()
-const fullBackgroundSrc = `images/bg.png`
-const HTMLBodyStyle = document.getElementsByTagName(`body`)[0].style
+const BACKGROUND_SRC = `images/bg.webp`
 
 cachingImage.onload = () => {
-  HTMLBodyStyle.background = `url(${fullBackgroundSrc}) no-repeat center center fixed`
-  HTMLBodyStyle[`background-size`] = `cover` // necessary even though it's already set in stylesheet
+  document.getElementsByTagName(`body`)[0].style.background = `url(${BACKGROUND_SRC}) fixed center center / cover no-repeat`
 }
 
-cachingImage.src = fullBackgroundSrc
+cachingImage.src = BACKGROUND_SRC

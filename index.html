@@ -2,15 +2,29 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
   <title>Portfolio</title>
-  <link rel="icon" href="images/favicon.png" />
+  <meta name="description" content="Web development portfolio" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.webp" />
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine|Roboto+Mono">
-  <script type="text/javascript" src="bannerAnimation.js" defer></script>
-  <script type="text/javascript" src="buttonAnimation.js" defer></script>
   <script type="text/javascript" src="backgroundAnimation.js" defer></script>
+  <script type="text/javascript" src="buttonAnimation.js" defer></script>
+  <script type="text/javascript" src="bannerAnimation.js" defer></script>
+  <style>
+    /* speed up loading of critical (by element) css, especially bg image */
+    body {
+      background: url(images/bg-min.webp) fixed center center / cover no-repeat;
+      font-family: 'Roboto', sans-serif;
+      color: #F3F6F8;
+      padding: 4vh 2vw;
+      margin: 0;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -35,46 +49,46 @@
 
     <div class="flex-wrapper">
       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="floater">
-        <img src="images/skills/javascript.png" alt="JavaScript">
+        <img src="images/skills/javascript.webp" alt="JavaScript" height="96" width="96" />
       </a>
       <a href="https://reactjs.org/" class="floater">
-        <img src="images/skills/react.png" alt="React">
+        <img src="images/skills/react.webp" alt="React" height="96" width="96" />
       </a>
       <a href="https://redux.js.org/" class="floater">
-        <img src="images/skills/redux.png" alt="Redux">
+        <img src="images/skills/redux.webp" alt="Redux" height="96" width="96" />
       </a>
-    </a>
-    <a href="https://webpack.js.org/" class="floater">
-      <img src="images/skills/webpack.png" alt="Webpack">
-    </a>
-    <a href="https://babeljs.io/" class="floater">
-      <img src="images/skills/babel.png" alt="Babel">
-    </a>
+      <a href="https://webpack.js.org/" class="floater">
+        <img src="images/skills/webpack.webp" alt="Webpack" height="96" width="96" />
+      </a>
+      <a href="https://babeljs.io/" class="floater">
+        <img src="images/skills/babel.webp" alt="Babel" height="96" width="96" />
+      </a>
       <a href="https://nodejs.org/en/" class="floater">
-        <img src="images/skills/node.png" alt="Node.js">
+        <img src="images/skills/node.webp" alt="Node.js" height="96" width="96" />
       </a>
       <a href="https://expressjs.com/" class="floater">
-        <img src="images/skills/express.png" alt="Express">
+        <img src="images/skills/express.webp" alt="Express" height="96" width="96" />
       </a>
       <a href="https://www.postgresql.org/" class="floater">
-        <img src="images/skills/postgres.png" alt="Posgres">
+        <img src="images/skills/postgres.webp" alt="Postgres" height="96" width="96" />
       </a>
       <a href="http://docs.sequelizejs.com/" class="floater">
-        <img src="images/skills/sequelize.png" alt="Sequelize">
+        <img src="images/skills/sequelize.webp" alt="Sequelize" height="96" width="96" />
+      </a>
       <a href="https://mochajs.org/" class="floater">
-        <img src="images/skills/mocha.png" alt="Mocha">
+        <img src="images/skills/mocha.webp" alt="Mocha" height="96" width="96" />
       </a>
       <a href="http://www.chaijs.com/" class="floater">
-        <img src="images/skills/chai.png" alt="Chai">
+        <img src="images/skills/chai.webp" alt="Chai" height="96" width="96" />
       </a>
       <a href="https://sass-lang.com/" class="floater">
-        <img src="images/skills/sass.png" alt="Sass">
+        <img src="images/skills/sass.webp" alt="Sass" height="96" width="96" />
       </a>
       <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" class="floater">
-        <img src="images/skills/html5.png" alt="HTML5">
+        <img src="images/skills/html5.webp" alt="HTML5" height="96" width="96" />
       </a>
       <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" class="floater">
-        <img src="images/skills/css3.png" alt="CSS3">
+        <img src="images/skills/css3.webp" alt="CSS3" height="96" width="96" />
       </a>
     </div>
 
@@ -87,25 +101,22 @@
     <div id="project-buttons">
       <div class="flex-wrapper">
         <button type="button" value="wsios" class="floater">
-          <img src="images/projects/whatsstackios.png" alt="WhatsStackIOS" />
+          <img src="images/projects/whatsstackios.webp" alt="WhatsStackIOS" height="96" width="96" />
         </button>
         <button type="button" value="ps" class="floater">
-          <img src="images/projects/platescraper.png" alt="Plate Scraper" />
+          <img src="images/projects/platescraper.webp" alt="Plate Scraper" height="96" width="96" />
         </button>
         <button type="button" value="sd" class="floater">
-          <img src="images/projects/starshipdepot.png" alt="Starship Depot" />
+          <img src="images/projects/starshipdepot.webp" alt="Starship Depot" height="96" width="96" />
         </button>
         <button type="button" value="twg" class="floater">
-          <img src="images/projects/thewisdomgenerator.png" alt="The Wisdom Generator" />
+          <img src="images/projects/thewisdomgenerator.webp" alt="The Wisdom Generator" height="96" width="96" />
         </button>
         <button type="button" value="ny" class="floater">
-          <img src="images/projects/notyelp.png" alt="Not Yelp" />
-        </button>
-        <button type="button" value="racf" class="floater">
-          <img src="images/projects/reduxactioncreatorfactory.png" alt="Redux Action Creator Factory" />
+          <img src="images/projects/notyelp.webp" alt="Not Yelp" height="96" width="96" />
         </button>
         <button type="button" value="port" class="floater">
-          <img src="images/projects/portfolio.png" alt="Portfolio" />
+          <img src="images/projects/portfolio.webp" alt="Portfolio" height="96" width="96" />
         </button>
       </div>
     </div>
@@ -289,37 +300,6 @@
       <!-- <img screenshot?/> -->
     </div>
 
-    <div class="project hidden gone" id="racf">
-      <h3 class="center-text">Redux Action Creator Factory &nbsp;-&nbsp; NPM Module</h3>
-      <div class="flex-wrapper">
-        <div class="basic-info">
-          <b>Deployment and Code:</b>
-          <ul>
-            <li><a href="https://www.npmjs.com/package/redux-action-creator-factory">Deployment</a></li>
-            <li><a href="https://github.com/SpencerWhitehead7/redux-action-creator-factory">Source Code</a></li>
-          </ul>
-          <b>Tech stack:</b>
-          <ul>
-            <li>Javascript, Mocha, Chai, git</li>
-          </ul>
-          <b>Features:</b>
-          <ul>
-            <li>Published, easily accessible NPM module</li>
-            <li>Simplifies the verbose, space intensive process of writing Redux action creators to a simple, reliable
-              function</li>
-          </ul>
-          <p><b>Development Environment:</b> TDD, with a partner</p>
-        </div>
-        <p class="description-text">
-          <b>Description:</b> This was a NPM module that simplifies the process of writing Redux action creators. Great
-          as Redux is, there's a lot of verbose boilerplate code, and my partner and I came up with a way to simplify it
-          without sacrificing any functionality. We used the technique in a group project at Fullstack (the e-commerce
-          site) and liked it so much we decided to publish it on NPM.
-        </p>
-      </div>
-      <!-- <img screenshot?/> -->
-    </div>
-
     <div class="project hidden gone" id="port">
       <h3 class="center-text">Portfolio &nbsp;-&nbsp; Professional Infomation Site</h3>
       <div class="flex-wrapper">
@@ -381,16 +361,16 @@
       <h2 class="center-text">Get In Touch</h2>
       <div class="flex-wrapper">
         <a href="mailto:SpencerWhitehead7@gmail.com">
-          <img src="images/contact/email.png" alt="email - SpencerWhitehead7@gmail.com" />
+          <img src="images/contact/email.webp" alt="email - SpencerWhitehead7@gmail.com" height="64" width="64" />
         </a>
         <a href="https://www.linkedin.com/in/spencer-whitehead/">
-          <img src="images/contact/linkedin.png" alt="LinkedIn" />
+          <img src="images/contact/linkedin.webp" alt="LinkedIn" height="64" width="64" />
         </a>
         <a href="https://github.com/SpencerWhitehead7">
-          <img src="images/contact/github.png" alt="GitHub" />
+          <img src="images/contact/github.webp" alt="GitHub" height="64" width="64" />
         </a>
         <a href="https://medium.com/@spencerwhitehead7">
-          <img src="images/contact/medium.png" alt="Medium (updated (very) sporadically)" />
+          <img src="images/contact/medium.webp" alt="Medium (updated (very) sporadically)" height="64" width="64" />
         </a>
       </div>
     </div>
