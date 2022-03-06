@@ -1,77 +1,66 @@
 const banner = document.getElementById(`banner`)
 
-const generateDisplayStringsFactory = strings => {
-  let stringIndex = 0
+const scramble = str => {
+  const scrambled = str.split(``).map((letter, idx) => ({ letter, idx }))
 
-  return () => new Promise((resolve, _) => {
-    const letterIndexArr = strings[stringIndex].split(``).map((letter, index) => ({ letter, index }))
-
-    for (let i = 0; i < letterIndexArr.length; i++) {
-      const lastUnshuffledIndex = letterIndexArr.length - 1 - i
-      const lastUnshuffledElement = letterIndexArr[lastUnshuffledIndex]
-      const shuffledIndex = Math.floor(Math.random() * (letterIndexArr.length - i))
-      const shuffledElement = letterIndexArr[shuffledIndex]
-      letterIndexArr[shuffledIndex] = lastUnshuffledElement
-      letterIndexArr[lastUnshuffledIndex] = shuffledElement
-    }
-
-    const blankArr = new Array(letterIndexArr.length).fill(` `)
-    const partialStrings = letterIndexArr.map(({ letter, index }) => {
-      blankArr[index] = letter
-      return blankArr.join(``)
-    })
-
-    stringIndex = (stringIndex + 1) % strings.length
-
-    resolve(partialStrings)
-  })
-}
-
-const animate = (framesToWait, ...fnsToRunOnCompletion) => {
-  const controlFrameRate = (framesWaited, resolve) => {
-    if (framesWaited === framesToWait) {
-      [...fnsToRunOnCompletion, resolve].forEach(fn => { fn() })
-    } else {
-      requestAnimationFrame(() => controlFrameRate(framesWaited + 1, resolve))
-    }
+  for (let i = 0; i < scrambled.length; i++) {
+    const lastUnshuffledI = scrambled.length - 1 - i
+    const lastUnshuffledE = scrambled[lastUnshuffledI]
+    const shuffledI = Math.floor(Math.random() * (scrambled.length - i))
+    const shuffledE = scrambled[shuffledI]
+    scrambled[shuffledI] = lastUnshuffledE
+    scrambled[lastUnshuffledI] = shuffledE
   }
 
-  return new Promise((resolve, _) => requestAnimationFrame(() => controlFrameRate(0, resolve)))
+  return scrambled
 }
 
-const animateString = async (element, options, displayStrings, displayStringIndex = 0, isIncreasing = true) => {
-  const { baseStr = ``, letterInterval = 12, displayFull = 120, displayBlank = 60 } = options
-
-  if (displayStringIndex === -1) {
-    const clearElement = () => { element.innerText = baseStr }
-    await animate(letterInterval, clearElement)
-    await animate(Math.max(displayBlank - letterInterval, 0))
-    return
+const waitFrames = framesToWait => {
+  const wait = (framesWaited, resolve) => {
+    framesWaited === framesToWait
+      ? resolve()
+      : requestAnimationFrame(() => { wait(framesWaited + 1, resolve) })
   }
 
-  const updateElement = () => { element.innerText = `${baseStr}${displayStrings[displayStringIndex]}` }
-  await animate(letterInterval, updateElement)
-
-  if (displayStringIndex === displayStrings.length - 1) {
-    await animate(Math.max(displayFull - letterInterval, 0))
-    isIncreasing = false
-  }
-
-  isIncreasing ? displayStringIndex++ : displayStringIndex--
-
-  return animateString(element, options, displayStrings, displayStringIndex, isIncreasing)
+  return new Promise((resolve, _) => { wait(0, resolve) })
 }
 
-const runAnimation = async (element, strings, options = {}) => {
-  const generateDisplayStrings = generateDisplayStringsFactory(strings)
-  let displayStrings = await generateDisplayStrings()
+const animateString = async (element, displayStrs, options = {}) => {
+  displayStrs = displayStrs.filter(str => str.length)
+  if (!displayStrs.length) return
+
+  const { baseStr = ``, letterInterval = 6, displayEmpty = 60, displayFull = 120 } = options
+
+  let displayStrIdx = 0
 
   while (true) {
-    ([displayStrings] = await Promise.all([generateDisplayStrings(), animateString(element, options, displayStrings)]))
+    const displayStr = displayStrs[displayStrIdx]
+    const scrambledStr = scramble(displayStr)
+    const partialStrs = Array(displayStr.length).fill(` `)
+
+    for (let i = 0; i < displayStr.length; i++) {
+      await waitFrames(letterInterval)
+      const { letter, idx } = scrambledStr[i]
+      partialStrs[idx] = letter
+      element.innerText = baseStr + partialStrs.join(``)
+    }
+
+    await waitFrames(Math.max(displayFull - letterInterval, 0))
+
+    for (let i = displayStr.length - 1; i >= 0; i--) {
+      await waitFrames(letterInterval)
+      const { idx } = scrambledStr[i]
+      partialStrs[idx] = ` `
+      element.innerText = baseStr + partialStrs.join(``)
+    }
+
+    await waitFrames(Math.max(displayEmpty - letterInterval, 0))
+
+    displayStrIdx = (displayStrIdx + 1) % displayStrs.length
   }
 }
 
-runAnimation(
+animateString(
   banner,
   [
     `Spencer Whitehead`,
@@ -81,8 +70,5 @@ runAnimation(
   ],
   {
     baseStr: `Hi, I'm `,
-    letterInterval: 12,
-    displayBlank: 60,
-    displayFull: 120,
   },
 )
