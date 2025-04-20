@@ -1,18 +1,14 @@
 const banner = document.getElementById(`banner`)
 
-const scramble = str => {
-  const scrambled = str.split(``).map((letter, idx) => ({ letter, idx }))
-
-  for (let i = 0; i < scrambled.length; i++) {
-    const lastUnshuffledI = scrambled.length - 1 - i
-    const lastUnshuffledE = scrambled[lastUnshuffledI]
-    const shuffledI = Math.floor(Math.random() * (scrambled.length - i))
-    const shuffledE = scrambled[shuffledI]
-    scrambled[shuffledI] = lastUnshuffledE
-    scrambled[lastUnshuffledI] = shuffledE
+const shuffle = arr => {
+  for (let i = 0; i < arr.length; i++) {
+    const lastUnshuffledI = arr.length - 1 - i
+    const lastUnshuffledE = arr[lastUnshuffledI]
+    const shuffledI = Math.floor(Math.random() * (arr.length - i))
+    const shuffledE = arr[shuffledI]
+    arr[shuffledI] = lastUnshuffledE
+    arr[lastUnshuffledI] = shuffledE
   }
-
-  return scrambled
 }
 
 const waitFrames = framesToWait => {
@@ -26,32 +22,38 @@ const waitFrames = framesToWait => {
 }
 
 const animateString = async (element, displayStrs, options = {}) => {
-  displayStrs = displayStrs.filter(str => str.length)
-  if (!displayStrs.length) return
+  const strScrambles = displayStrs
+    .filter(str => str.length)
+    .map(str => ({
+      scrambled: str.split(``).map((char, idx) => ({ char, idx })),
+      partial: str.split(``).fill(` `)
+    }))
+
+  if (!strScrambles.length) return
 
   const { baseStr = ``, letterInterval = 6, displayEmpty = 60, displayFull = 120 } = options
 
   let displayStrIdx = 0
 
   while (true) {
-    const displayStr = displayStrs[displayStrIdx]
-    const scrambledStr = scramble(displayStr)
-    const partialStrs = Array(displayStr.length).fill(` `)
+    const { scrambled, partial } = strScrambles[displayStrIdx]
 
-    for (let i = 0; i < displayStr.length; i++) {
+    shuffle(scrambled)
+
+    for (let i = 0; i < scrambled.length; i++) {
       await waitFrames(letterInterval)
-      const { letter, idx } = scrambledStr[i]
-      partialStrs[idx] = letter
-      element.innerText = baseStr + partialStrs.join(``)
+      const { char, idx } = scrambled[i]
+      partial[idx] = char
+      element.innerText = baseStr + partial.join(``)
     }
 
     await waitFrames(Math.max(displayFull - letterInterval, 0))
 
-    for (let i = displayStr.length - 1; i >= 0; i--) {
+    for (let i = scrambled.length - 1; i >= 0; i--) {
       await waitFrames(letterInterval)
-      const { idx } = scrambledStr[i]
-      partialStrs[idx] = ` `
-      element.innerText = baseStr + partialStrs.join(``)
+      const { idx } = scrambled[i]
+      partial[idx] = ` `
+      element.innerText = baseStr + partial.join(``)
     }
 
     await waitFrames(Math.max(displayEmpty - letterInterval, 0))
